@@ -28,7 +28,7 @@
 		waitSeconds: 300,
 		paths: {
 			bootstrap: 'https://emupedia.net/beta/emuos/js/libraries/bootstrap-4.4.1.min',
-			browserfs: '.https://emupedia.net/beta/emuos/js/libraries/browserfs-1.4.3.min',
+			browserfs: 'https://emupedia.net/beta/emuos/js/libraries/browserfs-1.4.3.min',
 			'datatables.net': 'https://emupedia.net/beta/emuos/js/libraries/datatables-1.10.20.min',
 			'datatables.net-bs4': 'https://emupedia.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min',
 			'datatables.net-editor': 'https://emupedia.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min',
