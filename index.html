@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns/website#">
+	<!--
+
+
+	╔═╗╔╦╗╦ ╦╔═╗╔═╗╔╦═╗╦╔═╗
+	╠═ ║║║║ ║╠═╝╠═  ║ ║║╠═╣
+	╚═╝╩ ╩╚═╝╩  ╚═╝═╩═╝╩╩ ╩
+
+
+	-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,minimal-ui"/>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="description" content="An Open Source DOS emulator to run old DOS games." />
+		<meta name="author" content="Emupedia" />
+		<meta name="robots" content="all" />
+		<meta name="google" value="notranslate" />
+		<meta name="googlebot" content="all">
+		<meta name="googlebot-news" content="all">
+
+		<!-- Facebook App -->
+		<meta property="fb:app_id" content="527458061442300">
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="DOSBox" />
+		<meta name="twitter:url" content="https://emupedia.net/beta/emuos/vfat/apps/dosbox/" />
+		<meta name="twitter:image" content="https://emupedia.net/beta/emuos/vfat/apps/dosbox/images/dosbox-logo-256.png" />
+		<meta name="twitter:site" content="@EmupediaNet">
+		<meta name="twitter:creator" content="@EmupediaNet">
+
+		<!-- Open Graph Data -->
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Emupedia">
+		<meta property="og:title" content="DOSBox">
+		<meta property="og:description" content="An Open Source DOS emulator to run old DOS games.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://emupedia.net/beta/emuos/vfat/apps/dosbox/">
+		<meta property="og:image" content="https://emupedia.net/beta/emuos/vfat/apps/dosbox/images/dosbox-logo-256.png">
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="256" />
+		<meta property="og:image:height" content="256" />
+
+		<title>DOSBox</title>
+		<link rel="manifest" href="js/config/manifest.json" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="apple-touch-icon" href="images/dosbox-logo-58.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="images/dosbox-logo-58.png" />
+		<link rel="apple-touch-icon" sizes="58x58" href="images/dosbox-logo-58.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="images/dosbox-logo-72.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="images/dosbox-logo-114.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="images/dosbox-logo-152.png" />
+		<link rel="apple-touch-icon" sizes="167x167" href="images/dosbox-logo-168.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/dosbox-logo-180.png" />
+		<link rel="apple-touch-startup-image" href="images/dosbox-logo-256.png" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/bootstrap-4.4.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-bootstrap4-1.10.20.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-buttons-bootstrap4-1.6.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-colreorder-bootstrap4-1.5.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-fixedheader-bootstrap4-3.1.6.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-responsive-bootstrap4-2.2.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/datatables-select-bootstrap4-1.3.1.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/lightslider-1.1.6.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/select2-4.0.12.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/select2-bootstrap4-1.0.0.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/libraries/perfect-scrollbar-1.4.0.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+	</head>
+	<body class="v1">
+		<div class="controls">
+			<button class="list">Game List</button>
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<select class="version-dropdown"><option value="v1" selected="selected">v1.0</option><option value="v2">v2.0</option></select>
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<select class="list-dropdown-v1"><option>Loading please wait...</option></select>
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<select class="list-dropdown-v2"><option>Loading please wait...</option></select>
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<select class="options-dropdown"><option>Loading please wait...</option></select>
+			<button class="load">Load</button>
+			<button class="fullscreen">Fullscreen</button>
+		</div>
+		<canvas id="canvas"></canvas>
+		<div class="preview"></div>
+		<a class="start" draggable="false" ondragstart="return false;" href="javascript:" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Click to Begin"><img draggable="false" ondragstart="return false;" alt="" src="images/start.png" /></a>
+		<div class="list-table"></div>
+		<script type="text/javascript" src="../../../js/polyfills.js"></script>
+		<script type="text/javascript" src="../../../js/platform.js"></script>
+		<script type="text/javascript" src="../../../js/system.js"></script>
+		<script type="text/javascript" src="../../../js/defines.js"></script>
+		<script type="text/javascript" src="../../../js/libraries/requirejs-2.3.6.js" data-main="js/main" defer="defer"></script>
+	</body>
+</html>
