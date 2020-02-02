@@ -70,10 +70,10 @@
 			'moment-timezone': 'https://emupedia.net/beta/emuos/js/libraries/moment-timezone-0.5.27.min',
 			pdfmake: 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-0.1.63.min',
 			'pdfmake-fonts': 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.63',
-			'perfect-scrollbar': 'https://emupedia.net/beta/emuos/js/libraries/perfect-scrollbar-1.4.0.min',
-			popper: 'https://emupedia.net/beta/emuos/js/libraries/popper-1.16.0.min',
+			'perfect-scrollbar': 'https://emupedia.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min',
+			popper: 'https://emupedia.net/beta/emuos/js/libraries/popper-1.16.1.min',
 			purl: 'https://emupedia.net/beta/emuos/js/libraries/purl-2.3.1',
-			select2: 'https://emupedia.net/beta/emuos/js/libraries/select2-4.0.12.min',
+			select2: 'https://emupedia.net/beta/emuos/js/libraries/select2-4.0.13.min',
 			text: 'https://emupedia.net/beta/emuos/js/libraries/requirejs-text-2.0.15'
 		},
 		shim: {
