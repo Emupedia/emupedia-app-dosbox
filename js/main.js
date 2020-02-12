@@ -27,54 +27,54 @@
 	requirejs.config({
 		waitSeconds: 300,
 		paths: {
-			bootstrap: ['https://emupedia.net/beta/emuos/js/libraries/bootstrap-4.4.1.min', 'https://emuos.net/beta/emuos/js/libraries/bootstrap-4.4.1.min'],
-			browserfs: ['https://emupedia.net/beta/emuos/js/libraries/browserfs-1.4.3.min', 'https://emuos.net/beta/emuos/js/libraries/browserfs-1.4.3.min'],
-			'datatables.net': ['https://emupedia.net/beta/emuos/js/libraries/datatables-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-1.10.20.min'],
-			'datatables.net-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min'],
-			'datatables.net-editor': ['https://emupedia.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min'],
-			'datatables.net-buttons': ['https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min'],
-			'datatables.net-buttons-colvis': ['https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min'],
-			'datatables.net-buttons-html5': ['https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min'],
-			'datatables.net-buttons-print': ['https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min'],
-			'datatables.net-buttons-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min'],
-			'datatables.net-colreorder': ['https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min'],
-			'datatables.net-colreorder-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min'],
-			'datatables.net-fixedcolumns': ['https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min'],
-			'datatables.net-fixedcolumns-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min'],
-			'datatables.net-fixedheader': ['https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min'],
-			'datatables.net-fixedheader-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min'],
-			'datatables.net-responsive': ['https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min'],
-			'datatables.net-responsive-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min'],
-			'datatables.net-select': ['https://emupedia.net/beta/emuos/js/libraries/datatables-select-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-1.3.1.min'],
-			'datatables.net-select-bs4': ['https://emupedia.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min'],
-			dropbox: ['https://emupedia.net/beta/emuos/js/libraries/dropbox-4.0.30.min', 'https://emuos.net/beta/emuos/js/libraries/dropbox-4.0.30.min'],
-			es6promise: ['https://emupedia.net/beta/emuos/js/polyfills/es6-promise-auto-4.2.8.min', 'https://emuos.net/beta/emuos/js/polyfills/es6-promise-auto-4.2.8.min'],
-			es6fetch: ['https://emupedia.net/beta/emuos/js/polyfills/es6-fetch-3.0.0', 'https://emuos.net/beta/emuos/js/polyfills/es6-fetch-3.0.0'],
-			jquery: ['https://emupedia.net/beta/emuos/js/libraries/jquery-3.4.1.min', 'https://emuos.net/beta/emuos/js/libraries/jquery-3.4.1.min'],
-			jsdos: ['https://emupedia.net/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emuos.net/beta/emuos/js/libraries/js-dos-6.22.59.min'],
-			json: ['https://emupedia.net/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emuos.net/beta/emuos/js/libraries/requirejs-json-1.0.3'],
-			jsonpath: ['https://emupedia.net/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emuos.net/beta/emuos/js/libraries/jsonpath-1.0.2.min'],
-			jszip: ['https://emupedia.net/beta/emuos/js/libraries/jszip-3.2.2.min', 'https://emuos.net/beta/emuos/js/libraries/jszip-3.2.2.min'],
-			'lightgallery': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-1.6.12.min'],
-			'lightgallery-autoplay': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min'],
-			'lightgallery-fullscreen': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min'],
-			'lightgallery-hash': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min'],
-			'lightgallery-pager': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min'],
-			'lightgallery-share': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min'],
-			'lightgallery-thumbnail': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min'],
-			'lightgallery-video': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min'],
-			'lightgallery-zoom': ['https://emupedia.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min'],
-			'lightslider': ['https://emupedia.net/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/lightslider-1.1.6.min'],
-			emularity: ['https://emupedia.net/beta/emuos/js/libraries/emularity', 'https://emuos.net/beta/emuos/js/libraries/emularity'],
-			moment: ['https://emupedia.net/beta/emuos/js/libraries/moment-2.24.0.min', 'https://emuos.net/beta/emuos/js/libraries/moment-2.24.0.min'],
-			'moment-timezone': ['https://emupedia.net/beta/emuos/js/libraries/moment-timezone-0.5.27.min', 'https://emuos.net/beta/emuos/js/libraries/moment-timezone-0.5.27.min'],
-			pdfmake: ['https://emupedia.net/beta/emuos/js/libraries/pdfmake-0.1.63.min', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-0.1.63.min'],
-			'pdfmake-fonts': ['https://emupedia.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.63', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.63'],
-			'perfect-scrollbar': ['https://emupedia.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min', 'https://emuos.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min'],
-			popper: ['https://emupedia.net/beta/emuos/js/libraries/popper-1.16.1.min', 'https://emuos.net/beta/emuos/js/libraries/popper-1.16.1.min'],
-			purl: ['https://emupedia.net/beta/emuos/js/libraries/purl-2.3.1', 'https://emuos.net/beta/emuos/js/libraries/purl-2.3.1'],
-			select2: ['https://emupedia.net/beta/emuos/js/libraries/select2-4.0.13.min', 'https://emuos.net/beta/emuos/js/libraries/select2-4.0.13.min'],
-			text: ['https://emupedia.net/beta/emuos/js/libraries/requirejs-text-2.0.15', 'https://emuos.net/beta/emuos/js/libraries/requirejs-text-2.0.15']
+			bootstrap: ['/beta/emuos/js/libraries/bootstrap-4.4.1.min', 'https://emupedia.net/beta/emuos/js/libraries/bootstrap-4.4.1.min', 'https://emuos.net/beta/emuos/js/libraries/bootstrap-4.4.1.min'],
+			browserfs: ['/beta/emuos/js/libraries/browserfs-1.4.3.min', 'https://emupedia.net/beta/emuos/js/libraries/browserfs-1.4.3.min', 'https://emuos.net/beta/emuos/js/libraries/browserfs-1.4.3.min'],
+			'datatables.net': ['/beta/emuos/js/libraries/datatables-1.10.20.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-1.10.20.min'],
+			'datatables.net-bs4': ['/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min'],
+			'datatables.net-editor': ['/beta/emuos/js/libraries/datatables-editor-1.6.7.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min'],
+			'datatables.net-buttons': ['/beta/emuos/js/libraries/datatables-buttons-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min'],
+			'datatables.net-buttons-colvis': ['/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min'],
+			'datatables.net-buttons-html5': ['/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min'],
+			'datatables.net-buttons-print': ['/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min'],
+			'datatables.net-buttons-bs4': ['/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min'],
+			'datatables.net-colreorder': ['/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min'],
+			'datatables.net-colreorder-bs4': ['/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min'],
+			'datatables.net-fixedcolumns': ['/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min'],
+			'datatables.net-fixedcolumns-bs4': ['/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min'],
+			'datatables.net-fixedheader': ['/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min'],
+			'datatables.net-fixedheader-bs4': ['/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min'],
+			'datatables.net-responsive': ['/beta/emuos/js/libraries/datatables-responsive-2.2.3.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min'],
+			'datatables.net-responsive-bs4': ['/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min'],
+			'datatables.net-select': ['/beta/emuos/js/libraries/datatables-select-1.3.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-select-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-1.3.1.min'],
+			'datatables.net-select-bs4': ['/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min'],
+			dropbox: ['/beta/emuos/js/libraries/dropbox-4.0.30.min', 'https://emupedia.net/beta/emuos/js/libraries/dropbox-4.0.30.min', 'https://emuos.net/beta/emuos/js/libraries/dropbox-4.0.30.min'],
+			es6promise: ['/beta/emuos/js/polyfills/es6-promise-auto-4.2.8.min', 'https://emupedia.net/beta/emuos/js/polyfills/es6-promise-auto-4.2.8.min', 'https://emuos.net/beta/emuos/js/polyfills/es6-promise-auto-4.2.8.min'],
+			es6fetch: ['/beta/emuos/js/polyfills/es6-fetch-3.0.0', 'https://emupedia.net/beta/emuos/js/polyfills/es6-fetch-3.0.0', 'https://emuos.net/beta/emuos/js/polyfills/es6-fetch-3.0.0'],
+			jquery: ['/beta/emuos/js/libraries/jquery-3.4.1.min', 'https://emupedia.net/beta/emuos/js/libraries/jquery-3.4.1.min', 'https://emuos.net/beta/emuos/js/libraries/jquery-3.4.1.min'],
+			jsdos: ['/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emupedia.net/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emuos.net/beta/emuos/js/libraries/js-dos-6.22.59.min'],
+			json: ['/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emupedia.net/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emuos.net/beta/emuos/js/libraries/requirejs-json-1.0.3'],
+			jsonpath: ['/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emupedia.net/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emuos.net/beta/emuos/js/libraries/jsonpath-1.0.2.min'],
+			jszip: ['/beta/emuos/js/libraries/jszip-3.2.2.min', 'https://emupedia.net/beta/emuos/js/libraries/jszip-3.2.2.min', 'https://emuos.net/beta/emuos/js/libraries/jszip-3.2.2.min'],
+			'lightgallery': ['/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-1.6.12.min'],
+			'lightgallery-autoplay': ['/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min'],
+			'lightgallery-fullscreen': ['/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min'],
+			'lightgallery-hash': ['/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min'],
+			'lightgallery-pager': ['/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min'],
+			'lightgallery-share': ['/beta/emuos/js/libraries/lightgallery-share-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min'],
+			'lightgallery-thumbnail': ['/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min'],
+			'lightgallery-video': ['/beta/emuos/js/libraries/lightgallery-video-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min'],
+			'lightgallery-zoom': ['/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min'],
+			'lightslider': ['/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/lightslider-1.1.6.min'],
+			emularity: ['/beta/emuos/js/libraries/emularity', 'https://emupedia.net/beta/emuos/js/libraries/emularity', 'https://emuos.net/beta/emuos/js/libraries/emularity'],
+			moment: ['/beta/emuos/js/libraries/moment-2.24.0.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-2.24.0.min', 'https://emuos.net/beta/emuos/js/libraries/moment-2.24.0.min'],
+			'moment-timezone': ['/beta/emuos/js/libraries/moment-timezone-0.5.27.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-timezone-0.5.27.min', 'https://emuos.net/beta/emuos/js/libraries/moment-timezone-0.5.27.min'],
+			pdfmake: ['/beta/emuos/js/libraries/pdfmake-0.1.63.min', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-0.1.63.min', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-0.1.63.min'],
+			'pdfmake-fonts': ['/beta/emuos/js/libraries/pdfmake-fonts-0.1.63', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.63', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.63'],
+			'perfect-scrollbar': ['/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min', 'https://emupedia.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min', 'https://emuos.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min'],
+			popper: ['/beta/emuos/js/libraries/popper-1.16.1.min', 'https://emupedia.net/beta/emuos/js/libraries/popper-1.16.1.min', 'https://emuos.net/beta/emuos/js/libraries/popper-1.16.1.min'],
+			purl: ['/beta/emuos/js/libraries/purl-2.3.1', 'https://emupedia.net/beta/emuos/js/libraries/purl-2.3.1', 'https://emuos.net/beta/emuos/js/libraries/purl-2.3.1'],
+			select2: ['/beta/emuos/js/libraries/select2-4.0.13.min', 'https://emupedia.net/beta/emuos/js/libraries/select2-4.0.13.min', 'https://emuos.net/beta/emuos/js/libraries/select2-4.0.13.min'],
+			text: ['/beta/emuos/js/libraries/requirejs-text-2.0.15', 'https://emupedia.net/beta/emuos/js/libraries/requirejs-text-2.0.15', 'https://emuos.net/beta/emuos/js/libraries/requirejs-text-2.0.15']
 		},
 		shim: {
 			bootstrap: {
@@ -453,9 +453,10 @@
 			}
 
 			function init() {
+				// noinspection JSUnresolvedFunction
 				$preview.hide();
 
-				// noinspection DuplicatedCode
+				// noinspection JSUnresolvedFunction,DuplicatedCode
 				if ($body.hasClass('v2')) {
 					if (typeof window.ci !== 'undefined') {
 						if (typeof window.ci.exit === 'function') {
@@ -463,17 +464,22 @@
 						}
 					}
 
+					// noinspection JSUnresolvedFunction
 					$list_dropdown_v2.html('').html(render_list_dropdown_v2(games_v2));
 					// $list_dropdown_v2.html('').html(render_list_dropdown_v2(v1_to_v2(games_v1)));
+					// noinspection JSUnresolvedFunction
 					$options_dropdown.html('').html(render_options_dropdown(games_v2['software']['type'][0]['games'][0]));
 
 					var screenshots = typeof games_v2['software']['type'][0]['games'][0]['versions'][0]['screenshots'] !== 'undefined' ? games_v2['software']['type'][0]['games'][0]['versions'][0]['screenshots'] : (typeof games_v2['software']['type'][0]['games'][0]['screenshots'] !== 'undefined' ? games_v2['software']['type'][0]['games'][0]['screenshots'] : []);
 					var screenshot = typeof screenshots[0] !== 'undefined' ? screenshots[0] : '';
 
 					if (!started && screenshot) {
+						// noinspection JSUnresolvedVariable
 						if ($.fn.lightSlider) {
+							// noinspection JSUnresolvedFunction
 							$preview.html('').html(render_preview(screenshots)).show();
 						} else {
+							// noinspection JSUnresolvedFunction
 							$preview.css({
 								'background-image': 'url(' + screenshot + ')',
 								'background-size': 'contain'
@@ -481,11 +487,14 @@
 						}
 					}
 
+					// noinspection JSUnresolvedFunction
 					$list_table.html('').html(render_list_table(games_v1));
 
 					var $table = $list_table.find('table');
 
+					// noinspection JSUnresolvedVariable
 					if ($.fn.dataTable) {
+						// noinspection JSUnresolvedVariable,JSCheckFunctionSignatures
 						$.extend(true, $.fn.dataTable.defaults, {
 							dom: "<'row filters'<'col-md-3'l><'col-md-6 toolbar text-center'B><'col-md-3'f>><'row'<'col-sm-12'tr>><'row panel-footer'<'col-sm-6'i><'col-sm-6'p>>",
 							paging: true,
@@ -513,7 +522,7 @@
 								}
 							}
 						});
-
+						// noinspection JSUnresolvedVariable,JSCheckFunctionSignatures
 						$.extend(true, $.fn.dataTable.Buttons.defaults, {
 							dom: {
 								container: {
@@ -536,7 +545,7 @@
 								}
 							}
 						});
-
+						// noinspection JSUnresolvedVariable
 						$.fn.dataTable.render.ellipsis = function (cutoff, wordbreak, escapeHtml) {
 							var esc = function (t) {
 								return t
@@ -578,15 +587,19 @@
 								return '<span class="ellipsis" title="' + esc(d) + '">' + shortened + '&#8230;</span>';
 							};
 						};
-
+						// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 						if ($.fn.dataTable.isDataTable($table)) {
+							// noinspection JSUnresolvedFunction
 							$table.DataTable().destroy();
 						} else {
+							// noinspection JSUnresolvedFunction
 							$table.DataTable();
 						}
 					}
 
+					// noinspection JSUnresolvedVariable
 					if ($.fn.select2) {
+						// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 						$.fn.select2.defaults.set('theme', 'bootstrap4');
 
 						if ($list_dropdown_v2.data('select2')) {
@@ -611,7 +624,9 @@
 								}
 							}).on('select2:close', function() {
 								if (perfect_scrollbar) {
+									// noinspection JSUnresolvedVariable
 									if (typeof perfect_scrollbar.destroy === 'function') {
+										// noinspection JSUnresolvedFunction
 										perfect_scrollbar.destroy();
 									}
 								}
@@ -620,6 +635,7 @@
 							$list_dropdown_v2.select2({
 								width: 'element'
 							}).on('select2:open', function() {
+								// noinspection JSUnresolvedFunction
 								$window.trigger('resize');
 
 								if (typeof PerfectScrollbar !== 'undefined') {
@@ -635,13 +651,18 @@
 								}
 							}).on('select2:close', function() {
 								if (perfect_scrollbar) {
+									// noinspection JSUnresolvedVariable
 									if (typeof perfect_scrollbar.destroy === 'function') {
+										// noinspection JSUnresolvedFunction
 										perfect_scrollbar.destroy();
 									}
 								}
 							}).on('select2:select', function (e) {
+								// noinspection JSUnresolvedVariable
 								if (typeof e.params !== 'undefined') {
+									// noinspection JSUnresolvedVariable
 									if (typeof e.params.data !== 'undefined') {
+										// noinspection JSUnresolvedVariable
 										if (typeof e.params.data.element !== 'undefined') {
 											// noinspection JSUnresolvedFunction
 											//Router.navigate('/' + Router.getRoute() + '/' + parseInt($(e.params.data.element).val(), 10));
@@ -666,7 +687,9 @@
 								}
 							}).on('select2:close', function() {
 								if (perfect_scrollbar) {
+									// noinspection JSUnresolvedVariable
 									if (typeof perfect_scrollbar.destroy === 'function') {
+										// noinspection JSUnresolvedFunction
 										perfect_scrollbar.destroy();
 									}
 								}
@@ -674,15 +697,21 @@
 						}
 					}
 
+					// noinspection JSUnresolvedFunction
 					$body.find('button').addClass('btn btn-light');
 				} else {
+					// noinspection JSUnresolvedFunction
 					$list_dropdown_v1.html('').html(render_list_dropdown_v1(games_v1));
+					// noinspection JSUnresolvedFunction
 					$list_table.html('').html(render_list_table(games_v1));
 
 					if (!started && games_v1['games'][0]['screenshots'][0]) {
+						// noinspection JSUnresolvedVariable
 						if ($.fn.lightSlider) {
+							// noinspection JSUnresolvedFunction
 							$preview.html('').html(render_preview(games_v1['games'][0]['screenshots'])).show();
 						} else {
+							// noinspection JSUnresolvedFunction
 							$preview.css({
 								'background-image': 'url(' + games_v1['games'][0]['screenshots'][0] + ')',
 								'background-size': 'contain'
@@ -690,6 +719,7 @@
 						}
 					}
 
+					// noinspection JSUnresolvedVariable
 					if ($.fn.select2) {
 						if ($list_dropdown_v2.data('select2')) {
 							$version_dropdown.select2('destroy');
@@ -697,15 +727,19 @@
 							$options_dropdown.select2('destroy');
 						}
 					}
-
+					// noinspection JSUnresolvedFunction
 					$body.find('button').removeClass('btn btn-light');
 				}
 
+				// noinspection JSUnresolvedVariable
 				if ($.fn.tooltip) {
+					// noinspection JSUnresolvedFunction
 					$body.find('[data-toggle="tooltip"], [data-toggle="dropdown"]').tooltip();
 				}
 
+				// noinspection JSUnresolvedVariable
 				if ($.fn.lightSlider) {
+					// noinspection JSUnresolvedFunction
 					lightslider = $body.find('.lightslider').lightSlider({
 						item: 1,
 						gallery: true,
@@ -743,7 +777,7 @@
 					var files = [];
 
 					for (var f in file) {
-						// noinspection JSUnfilteredForInLoop
+						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 						dbx.filesGetTemporaryLink({path: '/dosbox/' + file[f]}).then(function(response) {
 							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
 							files.push(response);
@@ -762,6 +796,7 @@
 							var emulator = new Emulator($canvas.get(0), function() {
 									started = true;
 									setTimeout(function() {
+										// noinspection JSUnresolvedFunction
 										$window.trigger('resize');
 									}, 2500);
 								},
@@ -791,6 +826,7 @@
 						var emulator = new Emulator($canvas.get(0), function() {
 								started = true;
 								setTimeout(function() {
+									// noinspection JSUnresolvedFunction
 									$window.trigger('resize');
 								}, 2500);
 							},
@@ -827,7 +863,7 @@
 						var files = [];
 
 						for (var f in file) {
-							// noinspection JSUnfilteredForInLoop
+							// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 							dbx.filesGetTemporaryLink({path: '/dosbox/' + file[f]['url']}).then(function(response) {
 								for (var i in file) {
 									// noinspection JSUnfilteredForInLoop
@@ -851,6 +887,7 @@
 								clearInterval(int);
 								int = null;
 
+								// noinspection JSUnresolvedFunction
 								fs.extractAll([{url: files[0]['link'], mountPoint: '/' + files[0]['mount']}, {url: files[1]['link'], mountPoint: '/' + files[1]['mount']}]).then(function() {
 									started = true;
 									main(args).then(function(ci) {
@@ -860,7 +897,9 @@
 							}
 						}, 100);
 					} else {
+						// noinspection JSUnresolvedFunction
 						dbx.filesGetTemporaryLink({path: '/dosbox/' + file}).then(function(response) {
+							// noinspection JSUnresolvedFunction
 							fs.extract(response.link).then(function() {
 								started = true;
 								main(args).then(function(ci) {
@@ -893,28 +932,40 @@
 				// noinspection JSUnusedLocalSymbols
 				var index_selected, genre_index_selected, game_index_selected, option_selected, game_id_selected;
 
+				// noinspection JSUnresolvedFunction
 				first = typeof $.url().param('game') !== 'undefined' ? $.url().param('game') : (typeof $.url().param('gamev2') !== 'undefined' ? $.url().param('gamev2') : false);
 
+				// noinspection JSUnresolvedFunction
 				if (typeof $.url().param('gamev2') !== 'undefined') {
+					// noinspection JSUnresolvedFunction
 					$version_dropdown.find('option').prop('selected', false).removeAttr('selected');
+					// noinspection JSUnresolvedFunction
 					$version_dropdown.find('option[value="v2"]').prop('selected', true).attr('selected', true);
+					// noinspection JSUnresolvedFunction
 					$body.removeClass('v1 v2').addClass('v2');
 				}
 
+				// noinspection JSUnresolvedFunction
 				if (typeof $.url().param('game') !== 'undefined') {
+					// noinspection JSUnresolvedFunction
 					$body.removeClass('v1 v2').addClass('v1');
 				}
 
 				init();
 
 				if (first) {
+					// noinspection JSUnresolvedFunction
 					$list_table.hide();
+					// noinspection JSUnresolvedFunction
 					$preview.hide();
+					// noinspection JSUnresolvedFunction
 					$start.hide();
 
-					// noinspection DuplicatedCode
+					// noinspection DuplicatedCode,JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
+						// noinspection JSUnresolvedFunction
 						$list_dropdown_v2.find('option').prop('selected', false).removeAttr('selected');
+						// noinspection JSUnresolvedFunction
 						$options_dropdown.find('option').prop('selected', false).removeAttr('selected');
 
 						var genres = games_v2['software']['type'];
@@ -958,15 +1009,18 @@
 							}
 						}
 
+						// noinspection JSUnresolvedFunction
 						$list_dropdown_v2.find('option[value="' + selidx + '"]').prop('selected', true).attr('selected', true).trigger('change');
 						var selgenreidx = parseInt($list_dropdown_v2.find('option[value="' + selidx + '"]').data('genre-index'), 10);
 						var selgameidx = parseInt($list_dropdown_v2.find('option[value="' + selidx + '"]').data('game-index'), 10);
+						// noinspection JSUnresolvedFunction
 						$options_dropdown.html('').html(render_options_dropdown(games_v2['software']['type'][selgenreidx]['games'][selgameidx]));
+						// noinspection JSUnresolvedFunction
 						$options_dropdown.find('option[data-game-id="' + first + '"]').prop('selected', true).attr('selected', true).trigger('change');
 
 						var file = typeof selgame['file'] !== 'undefined' ? selgame['file'] : '';
-						var args = typeof selgame['args']  !== 'undefined' ? selgame['args'] : [];
-						var executable = typeof selgame['executable']  !== 'undefined' ? selgame['executable'] : '';
+						var args = typeof selgame['args'] !== 'undefined' ? selgame['args'] : [];
+						var executable = typeof selgame['executable'] !== 'undefined' ? selgame['executable'] : '';
 						var mode = selgame['mode'];
 						var sync = typeof selgame['sync'] !== 'undefined' ? selgame['sync'] : true;
 						var cycles = selgame['cycles'];
@@ -974,9 +1028,11 @@
 						args.push('-c', executable.replace('./', ''));
 						start_v2(file, args, mode, sync, cycles);
 					} else {
+						// noinspection JSUnresolvedFunction
 						$list_dropdown_v1.find('option').prop('selected', false).removeAttr('selected');
-
+						// noinspection JSUnresolvedFunction
 						index_selected = parseInt($.url().param('game'), 10);
+						// noinspection JSUnresolvedFunction
 						var game_selected = $list_dropdown_v1.find('option[value="'+ index_selected +'"]').prop('selected', true).attr('selected', true).data('game-id');
 
 						// noinspection DuplicatedCode
@@ -1006,8 +1062,9 @@
 					first = false;
 				}
 
-				// noinspection DuplicatedCode
+				// noinspection JSUnresolvedFunction,DuplicatedCode
 				$document.off('click', '.list-table table tr').on('click', '.list-table table tr', function() {
+					// noinspection JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
 
 					} else {
@@ -1023,8 +1080,11 @@
 							for (var game in games_v1['games']) {
 								// noinspection JSUnfilteredForInLoop,DuplicatedCode
 								if (games_v1['games'][game]['id'] === game_selected) {
+									// noinspection JSUnresolvedFunction
 									$list_table.hide();
+									// noinspection JSUnresolvedFunction
 									$preview.hide();
+									// noinspection JSUnresolvedFunction
 									$start.hide();
 									// noinspection JSUnfilteredForInLoop,DuplicatedCode
 									start_v1(typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
@@ -1036,8 +1096,11 @@
 										for (var clone in games_v1['games'][game]['clones']) {
 											// noinspection JSUnfilteredForInLoop,DuplicatedCode
 											if (games_v1['games'][game]['clones'][clone]['id'] === game_selected) {
+												// noinspection JSUnresolvedFunction
 												$list_table.hide();
+												// noinspection JSUnresolvedFunction
 												$preview.hide();
+												// noinspection JSUnresolvedFunction
 												$start.hide();
 												// noinspection JSUnfilteredForInLoop,DuplicatedCode
 												start_v1((typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
@@ -1052,16 +1115,19 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('click', '.start').on('click', '.start', function () {
 					$('.tooltip, .popover').remove();
+					// noinspection JSUnresolvedFunction
 					$('.load').trigger('click');
 				});
-				// noinspection DuplicatedCode
+				// noinspection JSUnresolvedFunction,DuplicatedCode
 				$document.off('click', '.load').on('click', '.load', function() {
 					var index_selected;
 
-					// noinspection DuplicatedCode
+					// noinspection JSUnresolvedFunction,DuplicatedCode
 					if ($body.hasClass('v2')) {
+						// noinspection JSUnresolvedFunction
 						var option_selected = parseInt($options_dropdown.val(), 10);
 						var game_id_selected = $options_dropdown.find('option[value="' + option_selected + '"]').data('game-id');
 						var genres = games_v2['software']['type'];
@@ -1107,8 +1173,8 @@
 
 						var id = typeof selgame['id'] !== 'undefined' ? selgame['id'] : '';
 						var file = typeof selgame['file'] !== 'undefined' ? selgame['file'] : '';
-						var args = typeof selgame['args']  !== 'undefined' ? selgame['args'] : [];
-						var executable = typeof selgame['executable']  !== 'undefined' ? selgame['executable'] : '';
+						var args = typeof selgame['args'] !== 'undefined' ? selgame['args'] : [];
+						var executable = typeof selgame['executable'] !== 'undefined' ? selgame['executable'] : '';
 						var mode = selgame['mode'];
 						var sync = typeof selgame['sync'] !== 'undefined' ? selgame['sync'] : true;
 						var cycles = selgame['cycles'];
@@ -1117,8 +1183,11 @@
 
 						if (first) {
 							first = false;
+							// noinspection JSUnresolvedFunction
 							$list_table.hide();
+							// noinspection JSUnresolvedFunction
 							$preview.hide();
+							// noinspection JSUnresolvedFunction
 							$start.hide();
 							start_v2(file, args, mode, sync, cycles);
 						} else {
@@ -1130,14 +1199,18 @@
 							location.href = location.protocol + '//' + location.host + location.pathname + '?gamev2=' + id;
 						}
 					} else {
+						// noinspection JSUnresolvedFunction
 						index_selected = parseInt($list_dropdown_v1.val(), 10);
 						var game_selected = $list_dropdown_v1.find('option[value="' + index_selected + '"]').data('game-id');
 
 						// noinspection DuplicatedCode
 						if (first) {
 							first = false;
+							// noinspection JSUnresolvedFunction
 							$list_table.hide();
+							// noinspection JSUnresolvedFunction
 							$preview.hide();
+							// noinspection JSUnresolvedFunction
 							$start.hide();
 							// noinspection DuplicatedCode
 							for (var game in games_v1['games']) {
@@ -1165,14 +1238,18 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('click', '.list').on('click', '.list', function() {
+					// noinspection JSCheckFunctionSignatures
 					$list_table.toggle();
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('click', '.fullscreen').on('click', '.fullscreen', function() {
+					// noinspection JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
 						// noinspection JSUnresolvedVariable
 						if (window.ci) {
-							// noinspection JSUnresolvedVariable
+							// noinspection JSUnresolvedVariable,JSDeprecatedSymbols
 							window.ci.fullscreen();
 						}
 					} else {
@@ -1182,6 +1259,7 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('change', '.list-dropdown-v1, .list-dropdown-v2').on('change', '.list-dropdown-v1, .list-dropdown-v2', function() {
 					var index_selected;
 					var screenshot;
@@ -1190,7 +1268,7 @@
 					if (!started) {
 						$start.show();
 
-						// noinspection DuplicatedCode
+						// noinspection DuplicatedCode,JSUnresolvedFunction
 						if ($body.hasClass('v2')) {
 							if (typeof window.ci !== 'undefined') {
 								if (typeof window.ci.exit === 'function') {
@@ -1198,23 +1276,28 @@
 								}
 							}
 
+							// noinspection JSUnresolvedFunction
 							index_selected = parseInt($list_dropdown_v2.val(), 10);
 							var genre_index_selected = parseInt($list_dropdown_v2.find('option[value="' + index_selected + '"]').data('genre-index'), 10);
 							var game_index_selected = parseInt($list_dropdown_v2.find('option[value="' + index_selected + '"]').data('game-index'), 10);
+							// noinspection JSUnresolvedFunction
 							$options_dropdown.html('').html(render_options_dropdown(games_v2['software']['type'][genre_index_selected]['games'][game_index_selected]));
 							var screenshots = typeof games_v2['software']['type'][genre_index_selected]['games'][game_index_selected]['versions'][0]['screenshots'] !== 'undefined' ? games_v2['software']['type'][genre_index_selected]['games'][game_index_selected]['versions'][0]['screenshots'] : (typeof games_v2['software']['type'][genre_index_selected]['games'][game_index_selected]['screenshots'] !== 'undefined' ? games_v2['software']['type'][genre_index_selected]['games'][game_index_selected]['screenshots'] : []);
 							screenshot = typeof screenshots[0] !== 'undefined' ? screenshots[0] : '';
 
-							// noinspection DuplicatedCode
+							// noinspection DuplicatedCode,JSUnresolvedVariable
 							if ($.fn.lightSlider) {
+								// noinspection JSUnresolvedFunction
 								$preview.html('').html(render_preview(screenshots)).show();
 							} else {
+								// noinspection JSUnresolvedFunction
 								$preview.css({
 									'background-image': 'url(' + screenshot + ')',
 									'background-size': 'contain'
 								}).show();
 							}
 						} else {
+							// noinspection JSUnresolvedFunction
 							index_selected = parseInt($list_dropdown_v1.val(), 10);
 							var game_selected = $list_dropdown_v1.find('option[value="'+ index_selected +'"]').data('game-id');
 
@@ -1228,20 +1311,23 @@
 										screenshot = (typeof games_v1['games'][game]['screenshots'] === 'object' ? (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '') : '');
 
 										if (screenshot !== '') {
+											// noinspection JSUnresolvedVariable
 											if ($.fn.lightSlider) {
-												// noinspection JSUnfilteredForInLoop
+												// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 												$preview.html('').html(render_preview(games_v1['games'][game]['screenshots'])).show();
 											} else {
-												// noinspection JSUnfilteredForInLoop
+												// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 												$preview.css({
 													'background-image': 'url(' + (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '') + ')',
 													'background-size': 'contain'
 												}).show();
 											}
 										} else {
+											// noinspection JSUnresolvedFunction
 											$preview.hide();
 										}
 									} else {
+										// noinspection JSUnresolvedFunction
 										$preview.hide();
 									}
 									break;
@@ -1258,31 +1344,35 @@
 													screenshot = (typeof games_v1['games'][game]['clones'][clone]['screenshots'] === 'object' ? (typeof games_v1['games'][game]['clones'][clone]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['screenshots'][0] : (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '')) : (typeof games_v1['games'][game]['screenshots'] === 'object' ? (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '') : ''));
 
 													if (screenshot !== '') {
+														// noinspection JSUnresolvedVariable
 														if ($.fn.lightSlider) {
 															// noinspection JSUnfilteredForInLoop
 															if (typeof games_v1['games'][game]['clones'][clone]['screenshots'] === 'object') {
-																// noinspection JSUnfilteredForInLoop
+																// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 																$preview.html('').html(render_preview(games_v1['games'][game]['clones'][clone]['screenshots'])).show();
 															} else {
 																// noinspection JSUnfilteredForInLoop
 																if (typeof games_v1['games'][game]['screenshots'] === 'object') {
-																	// noinspection JSUnfilteredForInLoop
+																	// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 																	$preview.html('').html(render_preview(games_v1['games'][game]['screenshots'])).show();
 																} else {
+																	// noinspection JSUnresolvedFunction
 																	$preview.hide();
 																}
 															}
 														} else {
-															// noinspection JSUnfilteredForInLoop
+															// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 															$preview.css({
 																'background-image': 'url(' + screenshot + ')',
 																'background-size': 'contain'
 															}).show();
 														}
 													} else {
+														// noinspection JSUnresolvedFunction
 														$preview.hide();
 													}
 												} else {
+													// noinspection JSUnresolvedFunction
 													$preview.hide();
 												}
 												break;
@@ -1293,7 +1383,9 @@
 							}
 						}
 
+						// noinspection JSUnresolvedVariable
 						if ($.fn.lightSlider) {
+							// noinspection JSUnresolvedFunction
 							lightslider = $body.find('.lightslider').lightSlider({
 								item: 1,
 								gallery: true,
@@ -1306,8 +1398,9 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('change', '.options-dropdown').on('change', '.options-dropdown', function() {
-					// noinspection DuplicatedCode
+					// noinspection DuplicatedCode,JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
 						$start.show();
 
@@ -1317,7 +1410,9 @@
 							}
 						}
 
+						// noinspection JSUnresolvedFunction
 						var index_selected = parseInt($list_dropdown_v2.val(), 10);
+						// noinspection JSUnresolvedFunction
 						var option_selected = parseInt($options_dropdown.val(), 10);
 						var genre_index_selected = parseInt($list_dropdown_v2.find('option[value="' + index_selected + '"]').data('genre-index'), 10);
 						var game_index_selected = parseInt($list_dropdown_v2.find('option[value="' + index_selected + '"]').data('game-index'), 10);
@@ -1367,10 +1462,11 @@
 							}
 						}
 
-						// noinspection DuplicatedCode
+						// noinspection DuplicatedCode,JSUnresolvedVariable
 						if ($.fn.lightSlider) {
+							// noinspection JSUnresolvedFunction
 							$preview.html('').html(render_preview(screenshots)).show();
-
+							// noinspection JSUnresolvedFunction
 							lightslider = $body.find('.lightslider').lightSlider({
 								item: 1,
 								gallery: true,
@@ -1381,6 +1477,7 @@
 								slideMargin: 0
 							});
 						} else {
+							// noinspection JSUnresolvedFunction
 							$preview.css({
 								'background-image': 'url(' + screenshots[0] + ')',
 								'background-size': 'contain'
@@ -1388,12 +1485,15 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$document.off('change', '.version-dropdown').on('change', '.version-dropdown', function() {
+					// noinspection JSUnresolvedFunction
 					$body.removeClass('v1 v2').addClass($version_dropdown.val());
 					init();
 				});
-				// noinspection DuplicatedCode
+				// noinspection JSUnresolvedFunction,DuplicatedCode
 				$window.off('resize').on('resize', function() {
+					// noinspection JSUnresolvedFunction
 					$body.find('.select2-container--bootstrap4 .select2-results > .select2-results__options').css({
 						'max-height': $window.height() - 57
 					});
@@ -1409,6 +1509,7 @@
 						height = $preview.height();
 					}
 
+					// noinspection JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
 						$body.find('.dosbox-container').width(width).height(height);
 					} else {
@@ -1423,6 +1524,7 @@
 						}
 					}
 				});
+				// noinspection JSUnresolvedFunction
 				$window.trigger('resize');
 			} else {
 				alert('DOSBox cannot work because your browser is not supported!')
