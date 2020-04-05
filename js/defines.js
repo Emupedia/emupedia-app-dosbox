@@ -51,6 +51,8 @@ window['DROPBOX_TOKEN']			= atob('UncxWEJoSHQzYUFBQUFBQUFBQURZX203TElMaGFfUjFad1
 	}
 
 	if (externallyFramed) {
-		window.top.location = window.location;
+		try {
+			window.top.location = window.location;
+		} catch (e) {}
 	}
 })();
