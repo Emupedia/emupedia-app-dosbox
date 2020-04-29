@@ -54,7 +54,7 @@
 			jsdos: ['/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emupedia.net/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emuos.net/beta/emuos/js/libraries/js-dos-6.22.59.min'],
 			json: ['/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emupedia.net/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emuos.net/beta/emuos/js/libraries/requirejs-json-1.0.3'],
 			jsonpath: ['/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emupedia.net/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emuos.net/beta/emuos/js/libraries/jsonpath-1.0.2.min'],
-			jszip: ['/beta/emuos/js/libraries/jszip-3.2.2.min', 'https://emupedia.net/beta/emuos/js/libraries/jszip-3.2.2.min', 'https://emuos.net/beta/emuos/js/libraries/jszip-3.2.2.min'],
+			jszip: ['/beta/emuos/js/libraries/jszip-3.4.0.min', 'https://emupedia.net/beta/emuos/js/libraries/jszip-3.4.0.min', 'https://emuos.net/beta/emuos/js/libraries/jszip-3.4.0.min'],
 			'lightgallery': ['/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-1.6.12.min'],
 			'lightgallery-autoplay': ['/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min'],
 			'lightgallery-fullscreen': ['/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min'],
