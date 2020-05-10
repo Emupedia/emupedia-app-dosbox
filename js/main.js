@@ -66,7 +66,7 @@
 			'lightgallery-zoom': ['/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min'],
 			'lightslider': ['/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/lightslider-1.1.6.min'],
 			emularity: ['/beta/emuos/js/libraries/emularity', 'https://emupedia.net/beta/emuos/js/libraries/emularity', 'https://emuos.net/beta/emuos/js/libraries/emularity'],
-			moment: ['/beta/emuos/js/libraries/moment-2.25.1.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-2.25.1.min', 'https://emuos.net/beta/emuos/js/libraries/moment-2.25.1.min'],
+			moment: ['/beta/emuos/js/libraries/moment-2.25.3.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-2.25.3.min', 'https://emuos.net/beta/emuos/js/libraries/moment-2.25.3.min'],
 			'moment-timezone': ['/beta/emuos/js/libraries/moment-timezone-0.5.28.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-timezone-0.5.28.min', 'https://emuos.net/beta/emuos/js/libraries/moment-timezone-0.5.28.min'],
 			pdfmake: ['/beta/emuos/js/libraries/pdfmake-0.1.65.min', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-0.1.65.min', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-0.1.65.min'],
 			'pdfmake-fonts': ['/beta/emuos/js/libraries/pdfmake-fonts-0.1.65', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.65', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.65'],
