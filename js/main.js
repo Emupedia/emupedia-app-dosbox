@@ -26,80 +26,46 @@
 	// noinspection JSFileReferences,JSUnresolvedFunction,JSUnresolvedVariable
 	requirejs.config({
 		waitSeconds: 300,
-		paths: {
-			bootstrap: ['/beta/emuos/js/libraries/bootstrap-4.4.1.min', 'https://emupedia.net/beta/emuos/js/libraries/bootstrap-4.4.1.min', 'https://emuos.net/beta/emuos/js/libraries/bootstrap-4.4.1.min'],
-			browserfs: ['/beta/emuos/js/libraries/browserfs-1.4.3.min', 'https://emupedia.net/beta/emuos/js/libraries/browserfs-1.4.3.min', 'https://emuos.net/beta/emuos/js/libraries/browserfs-1.4.3.min'],
-			'datatables.net': ['/beta/emuos/js/libraries/datatables-1.10.20.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-1.10.20.min'],
-			'datatables.net-bs4': ['/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-bootstrap4-1.10.20.min'],
-			'datatables.net-editor': ['/beta/emuos/js/libraries/datatables-editor-1.6.7.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-editor-1.6.7.min'],
-			'datatables.net-buttons': ['/beta/emuos/js/libraries/datatables-buttons-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-1.6.1.min'],
-			'datatables.net-buttons-colvis': ['/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-colvis-1.6.1.min'],
-			'datatables.net-buttons-html5': ['/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-html5-1.6.1.min'],
-			'datatables.net-buttons-print': ['/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-print-1.6.1.min'],
-			'datatables.net-buttons-bs4': ['/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-buttons-bootstrap4-1.6.1.min'],
-			'datatables.net-colreorder': ['/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-1.5.2.min'],
-			'datatables.net-colreorder-bs4': ['/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-colreorder-bootstrap4-1.5.2.min'],
-			'datatables.net-fixedcolumns': ['/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-3.3.0.min'],
-			'datatables.net-fixedcolumns-bs4': ['/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedcolumns-bootstrap4-3.3.0.min'],
-			'datatables.net-fixedheader': ['/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-3.1.6.min'],
-			'datatables.net-fixedheader-bs4': ['/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-fixedheader-bootstrap4-3.1.6.min'],
-			'datatables.net-responsive': ['/beta/emuos/js/libraries/datatables-responsive-2.2.3.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-2.2.3.min'],
-			'datatables.net-responsive-bs4': ['/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-responsive-bootstrap4-2.2.3.min'],
-			'datatables.net-select': ['/beta/emuos/js/libraries/datatables-select-1.3.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-select-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-1.3.1.min'],
-			'datatables.net-select-bs4': ['/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min', 'https://emupedia.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min', 'https://emuos.net/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min'],
-			dropbox: ['/beta/emuos/js/libraries/dropbox-4.0.30.min', 'https://emupedia.net/beta/emuos/js/libraries/dropbox-4.0.30.min', 'https://emuos.net/beta/emuos/js/libraries/dropbox-4.0.30.min'],
-			es6promise: ['/beta/emuos/js/libraries/polyfill-es6-promise-auto-4.2.8.min', 'https://emupedia.net/beta/emuos/js/libraries/polyfill-es6-promise-auto-4.2.8.min', 'https://emuos.net/beta/emuos/js/libraries/polyfill-es6-promise-auto-4.2.8.min'],
-			es6fetch: ['/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0', 'https://emupedia.net/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0', 'https://emuos.net/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0'],
-			jquery: ['/beta/emuos/js/libraries/jquery-3.5.0.min', 'https://emupedia.net/beta/emuos/js/libraries/jquery-3.5.0.min', 'https://emuos.net/beta/emuos/js/libraries/jquery-3.5.0.min'],
-			jsdos: ['/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emupedia.net/beta/emuos/js/libraries/js-dos-6.22.59.min', 'https://emuos.net/beta/emuos/js/libraries/js-dos-6.22.59.min'],
-			json: ['/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emupedia.net/beta/emuos/js/libraries/requirejs-json-1.0.3', 'https://emuos.net/beta/emuos/js/libraries/requirejs-json-1.0.3'],
-			jsonpath: ['/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emupedia.net/beta/emuos/js/libraries/jsonpath-1.0.2.min', 'https://emuos.net/beta/emuos/js/libraries/jsonpath-1.0.2.min'],
-			jszip: ['/beta/emuos/js/libraries/jszip-3.4.0.min', 'https://emupedia.net/beta/emuos/js/libraries/jszip-3.4.0.min', 'https://emuos.net/beta/emuos/js/libraries/jszip-3.4.0.min'],
-			'lightgallery': ['/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-1.6.12.min'],
-			'lightgallery-autoplay': ['/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-autoplay-1.6.12.min'],
-			'lightgallery-fullscreen': ['/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-fullscreen-1.6.12.min'],
-			'lightgallery-hash': ['/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-hash-1.6.12.min'],
-			'lightgallery-pager': ['/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-pager-1.6.12.min'],
-			'lightgallery-share': ['/beta/emuos/js/libraries/lightgallery-share-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-share-1.6.12.min'],
-			'lightgallery-thumbnail': ['/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-thumbnail-1.6.12.min'],
-			'lightgallery-video': ['/beta/emuos/js/libraries/lightgallery-video-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-video-1.6.12.min'],
-			'lightgallery-zoom': ['/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emupedia.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min', 'https://emuos.net/beta/emuos/js/libraries/lightgallery-zoom-1.6.12.min'],
-			'lightslider': ['/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emupedia.net/beta/emuos/js/libraries/lightslider-1.1.6.min', 'https://emuos.net/beta/emuos/js/libraries/lightslider-1.1.6.min'],
-			emularity: ['/beta/emuos/js/libraries/emularity', 'https://emupedia.net/beta/emuos/js/libraries/emularity', 'https://emuos.net/beta/emuos/js/libraries/emularity'],
-			moment: ['/beta/emuos/js/libraries/moment-2.25.3.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-2.25.3.min', 'https://emuos.net/beta/emuos/js/libraries/moment-2.25.3.min'],
-			'moment-timezone': ['/beta/emuos/js/libraries/moment-timezone-0.5.28.min', 'https://emupedia.net/beta/emuos/js/libraries/moment-timezone-0.5.28.min', 'https://emuos.net/beta/emuos/js/libraries/moment-timezone-0.5.28.min'],
-			pdfmake: ['/beta/emuos/js/libraries/pdfmake-0.1.65.min', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-0.1.65.min', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-0.1.65.min'],
-			'pdfmake-fonts': ['/beta/emuos/js/libraries/pdfmake-fonts-0.1.65', 'https://emupedia.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.65', 'https://emuos.net/beta/emuos/js/libraries/pdfmake-fonts-0.1.65'],
-			'perfect-scrollbar': ['/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min', 'https://emupedia.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min', 'https://emuos.net/beta/emuos/js/libraries/perfect-scrollbar-1.5.0.min'],
-			popper: ['/beta/emuos/js/libraries/popper-1.16.1.min', 'https://emupedia.net/beta/emuos/js/libraries/popper-1.16.1.min', 'https://emuos.net/beta/emuos/js/libraries/popper-1.16.1.min'],
-			purl: ['/beta/emuos/js/libraries/purl-2.3.1', 'https://emupedia.net/beta/emuos/js/libraries/purl-2.3.1', 'https://emuos.net/beta/emuos/js/libraries/purl-2.3.1'],
-			select2: ['/beta/emuos/js/libraries/select2-4.0.13.min', 'https://emupedia.net/beta/emuos/js/libraries/select2-4.0.13.min', 'https://emuos.net/beta/emuos/js/libraries/select2-4.0.13.min'],
-			text: ['/beta/emuos/js/libraries/requirejs-text-2.0.15', 'https://emupedia.net/beta/emuos/js/libraries/requirejs-text-2.0.15', 'https://emuos.net/beta/emuos/js/libraries/requirejs-text-2.0.15']
-		},
+		paths: $sys.lib,
 		shim: {
 			bootstrap: {
 				deps: ['jquery', 'popper', 'lightslider']
 			},
 			browserfs: {
 				exports: 'BrowserFS',
-				deps: ['es6promise'],
+				deps: ['polyfill-es6-promise'],
 				init: function(es6promise) {
 					window.Promise = es6promise;
 				}
 			},
-			'datatables.net-bs4': {
-				deps: ['datatables.net-editor']
+			'datatables': {
+				deps: ['bootstrap']
 			},
-			'datatables.net-buttons-bs4': {
-				deps: ['datatables.net-buttons-colvis', 'datatables.net-buttons-html5', 'datatables.net-buttons-print']
+			'datatables-bootstrap4': {
+				deps: ['datatables', 'datatables-editor']
 			},
-			'datatables.net-buttons-html5': {
+			'datatables-buttons-bootstrap4': {
+				deps: ['datatables-buttons-colvis', 'datatables-buttons-html5', 'datatables-buttons-print']
+			},
+			'datatables-buttons-html5': {
 				deps: ['pdfmake-fonts']
 			},
-			es6promise: {
+			'polyfill-es6-promise': {
 				exports: 'Promise'
 			},
-			jsdos: {
+			'jquery': {
+				exports: 'jQuery'
+			},
+			'jquery-1.x': {
+				exports: 'jQuery'
+			},
+			'jquery-2.x': {
+				exports: 'jQuery'
+			},
+			'jquery-3.x': {
+				exports: 'jQuery'
+			},
+			'js-dos': {
 				exports: 'Dos'
 			},
 			lightslider: {
@@ -126,6 +92,27 @@
 				exports: 'moment',
 				deps: ['moment']
 			}
+		},
+		map: {
+			'*': {
+				'datatables.net': 'datatables',
+				'datatables.net-bs4': 'datatables-bootstrap4',
+				'datatables.net-editor': 'datatables-editor',
+				'datatables.net-buttons': 'datatables-buttons',
+				'datatables.net-buttons-bs4': 'datatables-buttons-bootstrap4',
+				'datatables.net-colreorder': 'datatables-colreorder',
+				'datatables.net-colreorder-bs4': 'datatables-colreorder-bootstrap4',
+				'datatables.net-fixedcolumns': 'datatables-fixedcolumns',
+				'datatables.net-fixedcolumns-bs4': 'datatables-fixedcolumns-bootstrap4',
+				'datatables.net-fixedheader': 'datatables-fixedheader',
+				'datatables.net-fixedheader-bs4': 'datatables-fixedheader-bootstrap4',
+				'datatables.net-responsive': 'datatables-responsive',
+				'datatables.net-responsive-bs4': 'datatables-responsive-bootstrap4',
+				'datatables.net-select': 'datatables-select',
+				'datatables.net-select-bs4': 'datatables-select-bootstrap4',
+				json: 'requirejs-json',
+				text: 'requirejs-text'
+			}
 		}
 	});
 
@@ -137,20 +124,20 @@
 		'json!config/games-v3.json',
 		'purl',
 		'browserfs',
-		'jsdos',
+		'js-dos',
 		'dropbox',
-		'es6fetch',
+		'polyfill-es6-fetch',
 		'jsonpath',
 		'emularity',
 		'bootstrap',
-		'datatables.net',
-		'datatables.net-bs4',
-		'datatables.net-buttons-bs4',
-		'datatables.net-colreorder-bs4',
-		'datatables.net-fixedcolumns-bs4',
-		'datatables.net-fixedheader-bs4',
-		'datatables.net-responsive-bs4',
-		'datatables.net-select-bs4',
+		'datatables',
+		'datatables-bootstrap4',
+		'datatables-buttons-bootstrap4',
+		'datatables-colreorder-bootstrap4',
+		'datatables-fixedcolumns-bootstrap4',
+		'datatables-fixedheader-bootstrap4',
+		'datatables-responsive-bootstrap4',
+		'datatables-select-bootstrap4',
 		'perfect-scrollbar',
 		'select2'
 	], function($, games_v1, games_v2, games_v3, purl, browserfs, Dos, dropbox, fetch, jp, emularity, bootstrap, dt, datatablesbs4, datatablesbuttonsbs4, datatablescolreorderbs4, datatablesfixedcolumnsbs4, datatablesfixedheaderbs4, datatablesresponsivebs4, datatablesselectbs4, PerfectScrollbar, select2) {
@@ -830,7 +817,7 @@
 									$window.trigger('resize');
 								}, 2500);
 							},
-							new DosBoxLoader(DosBoxLoader.emulatorJS(SYSTEM_FEATURE_WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : (SYSTEM_FEATURE_ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
+							new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
 								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
 									if (filename === 'dosbox.html.mem') {
 										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
@@ -856,7 +843,7 @@
 				// noinspection JSUnresolvedFunction
 				Dos($canvas.get(0), {
 					cycles: cycles ? cycles : 'auto',
-					wdosboxUrl: mode === 'asm' || isIE ? (sync ? 'js/dosbox.js' : 'js/dosbox-nosync.js') : (sync ? 'js/wdosbox.js' : 'js/wdosbox-nosync.js'),
+					wdosboxUrl: mode === 'asm' || $sys.browser.isIE ? (sync ? 'js/dosbox.js' : 'js/dosbox-nosync.js') : (sync ? 'js/wdosbox.js' : 'js/wdosbox-nosync.js'),
 					autolock: true
 				}).ready(function(fs, main) {
 					if (Array.isArray(file)) {
@@ -899,7 +886,7 @@
 					} else {
 						// noinspection JSUnresolvedFunction
 						dbx.filesGetTemporaryLink({path: '/dosbox/' + file}).then(function(response) {
-							// noinspection JSUnresolvedFunction
+							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 							fs.extract(response.link).then(function() {
 								started = true;
 								main(args).then(function(ci) {
@@ -928,7 +915,7 @@
 			$start				= $('.start');
 
 			// noinspection JSUnresolvedVariable
-			if (SYSTEM_FEATURE_CANVAS && SYSTEM_FEATURE_TYPED_ARRAYS && (SYSTEM_FEATURE_ASMJS || SYSTEM_FEATURE_WEBASSEMBLY)) {
+			if ($sys.feature.CANVAS && $sys.feature.TYPED_ARRAYS && ($sys.feature.ASMJS || $sys.feature.WEBASSEMBLY)) {
 				// noinspection JSUnusedLocalSymbols
 				var index_selected, genre_index_selected, game_index_selected, option_selected, game_id_selected;
 
