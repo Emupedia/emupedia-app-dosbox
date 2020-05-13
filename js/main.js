@@ -38,7 +38,7 @@
 					window.Promise = es6promise;
 				}
 			},
-			'datatables': {
+			datatables: {
 				deps: ['bootstrap']
 			},
 			'datatables-bootstrap4': {
@@ -53,7 +53,7 @@
 			'polyfill-es6-promise': {
 				exports: 'Promise'
 			},
-			'jquery': {
+			jquery: {
 				exports: 'jQuery'
 			},
 			'jquery-1.x': {

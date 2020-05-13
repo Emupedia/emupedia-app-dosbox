@@ -301,6 +301,13 @@
 				'//emuos.net/beta/emuos/js/libraries/jquery-ajax-retry-0.2.8.min',
 				'//emuos.org/beta/emuos/js/libraries/jquery-ajax-retry-0.2.8.min'
 		],
+		'jquery-custom-scrollbar': [
+				'libraries/jquery-customscrollbar-3.1.5.min',
+				'/beta/emuos/js/libraries/jquery-customscrollbar-3.1.5.min',
+				'//emupedia.net/beta/emuos/js/libraries/jquery-customscrollbar-3.1.5.min',
+				'//emuos.net/beta/emuos/js/libraries/jquery-customscrollbar-3.1.5.min',
+				'//emuos.org/beta/emuos/js/libraries/jquery-customscrollbar-3.1.5.min'
+		],
 		'jquery-i18next': [
 				'libraries/jquery-i18next-1.2.1.min',
 				'/beta/emuos/js/libraries/jquery-i18next-1.2.1.min',
@@ -328,6 +335,13 @@
 				'//emupedia.net/beta/emuos/js/libraries/jquery-resizable-0.35.0.min',
 				'//emuos.net/beta/emuos/js/libraries/jquery-resizable-0.35.0.min',
 				'//emuos.org/beta/emuos/js/libraries/jquery-resizable-0.35.0.min'
+		],
+		'jquery-ui': [
+				'libraries/jquery-ui-1.12.1.min',
+				'/beta/emuos/js/libraries/jquery-ui-1.12.1.min',
+				'//emupedia.net/beta/emuos/js/libraries/jquery-ui-1.12.1.min',
+				'//emuos.net/beta/emuos/js/libraries/jquery-ui-1.12.1.min',
+				'//emuos.org/beta/emuos/js/libraries/jquery-ui-1.12.1.min'
 		],
 		'jquery-ui-1.11.x': [
 				'libraries/jquery-ui-1.11.4.min',
