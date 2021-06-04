@@ -10,6 +10,7 @@ if (typeof atob === 'undefined') {
 		}
 		// noinspection JSAssignmentUsedAsCondition,CommaExpressionJS,JSUnusedAssignment
 		for (var bc = 0, bs, buffer, idx = 0, output = ''; buffer = str.charAt(idx++); ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer, bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0) {
+			// noinspection JSUnresolvedVariable
 			buffer = chars.indexOf(buffer);
 		}
 
@@ -21,7 +22,7 @@ if (typeof btoa === 'undefined') {
 	// noinspection DuplicatedCode
 	btoa = function(input) {
 		var str = String(input);
-		// noinspection JSAssignmentUsedAsCondition,CommaExpressionJS
+		// noinspection JSAssignmentUsedAsCondition,CommaExpressionJS,JSUnresolvedVariable
 		for (var block, charCode, idx = 0, map = chars, output = ''; str.charAt(idx | 0) || (map = '=', idx % 1); output += map.charAt(63 & block >> 8 - idx % 1 * 8)) {
 			charCode = str.charCodeAt(idx += 3 / 4);
 
@@ -39,7 +40,7 @@ if (typeof btoa === 'undefined') {
 
 // endregion
 
-window['DROPBOX_TOKEN']			= atob('WV9VVHRTdGlzbnNBQUFBQUFBQUFBZnpIcnplN21nR0w2UlJmanhMaXVaOURUcjNjTlZxUXBYcGtIdndlXzhSdg==');
+window['DROPBOX_TOKEN']			= atob('dWh4TTRwVlVINGdBQUFBQUFBQUFBUUtwR3ExY2FjQ2FrTjQ5RkdmYk1EMlg4eTJ4NHp2d0VBYlJNTkI3RjB3Qg==');
 
 (function() {
 	var externallyFramed;
