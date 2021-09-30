@@ -766,6 +766,7 @@
 					for (var f in file) {
 						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 						dbx.filesDownload({path: '/dosbox/' + file[f]}).then(function(response) {
+							console.log(response);
 							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
 							files.push(response);
 						}).catch(function(error) {
@@ -781,34 +782,36 @@
 							int = null;
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 							var emulator = new Emulator($canvas.get(0), function() {
-									started = true;
-									setTimeout(function() {
-										// noinspection JSUnresolvedFunction
-										$window.trigger('resize');
-									}, 2500);
-								},
-								new DosBoxLoader(DosBoxLoader.emulatorJS(SYSTEM_FEATURE_WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : (SYSTEM_FEATURE_ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
-									DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
-										if (filename === 'dosbox.html.mem') {
-											return 'js/dosbox-' + sync + 'sync' + old + '.mem';
-										}
+								started = true;
+								setTimeout(function() {
+									// noinspection JSUnresolvedFunction
+									$window.trigger('resize');
+								}, 2500);
+							},
+							new DosBoxLoader(DosBoxLoader.emulatorJS(SYSTEM_FEATURE_WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : (SYSTEM_FEATURE_ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
+								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
+									if (filename === 'dosbox.html.mem') {
+										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
+									}
 
-										if (filename === 'dosbox.wasm') {
-											return 'js/dosbox-sync.wasm';
-										}
+									if (filename === 'dosbox.wasm') {
+										return 'js/dosbox-sync.wasm';
+									}
 
-										return filename;
-									}),
-									DosBoxLoader.mountZip('a', DosBoxLoader.fetchFile('OS File', get_file_order(0, file, files))),
-									DosBoxLoader.mountZip('b', DosBoxLoader.fetchFile('Game File', get_file_order(1, file, files))),
-									DosBoxLoader.extraArgs(args),
-									DosBoxLoader.startExe(executable)));
+									return filename;
+								}),
+								DosBoxLoader.mountZip('a', DosBoxLoader.fetchFile('OS File', get_file_order(0, file, files))),
+								DosBoxLoader.mountZip('b', DosBoxLoader.fetchFile('Game File', get_file_order(1, file, files))),
+								DosBoxLoader.extraArgs(args),
+								DosBoxLoader.startExe(executable))
+							);
 							emulator.start({waitAfterDownloading: false});
 						}
 					}, 100);
 				} else {
 					// noinspection JSUnresolvedFunction
 					dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
+						console.log(response);
 						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 						var emulator = new Emulator($canvas.get(0), function() {
 								started = true;
@@ -852,6 +855,7 @@
 						for (var f in file) {
 							// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
 							dbx.filesDownload({path: '/dosbox/' + file[f]['url']}).then(function(response) {
+								console.log(response);
 								for (var i in file) {
 									// noinspection JSUnfilteredForInLoop
 									if (response['metadata']['name'].toLowerCase() === file[i]['url'].toLowerCase()) {
@@ -886,6 +890,7 @@
 					} else {
 						// noinspection JSUnresolvedFunction
 						dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
+							console.log(response);
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 							fs.extract(URL.createObjectURL(response.result.fileBlob)).then(function() {
 								started = true;
