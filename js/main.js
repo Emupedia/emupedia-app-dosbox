@@ -765,7 +765,7 @@
 
 					for (var f in file) {
 						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-						dbx.filesGetTemporaryLink({path: '/dosbox/' + file[f]}).then(function(response) {
+						dbx.filesDownload({path: '/dosbox/' + file[f]}).then(function(response) {
 							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
 							files.push(response);
 						}).catch(function(error) {
@@ -808,7 +808,7 @@
 					}, 100);
 				} else {
 					// noinspection JSUnresolvedFunction
-					dbx.filesGetTemporaryLink({path: '/dosbox/' + file}).then(function(response) {
+					dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
 						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 						var emulator = new Emulator($canvas.get(0), function() {
 								started = true;
@@ -829,7 +829,7 @@
 
 									return filename;
 								}),
-								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', response.link)),
+								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.result.fileBlob))),
 								DosBoxLoader.extraArgs(args),
 								DosBoxLoader.startExe(executable)));
 						emulator.start({waitAfterDownloading: false});
@@ -851,7 +851,7 @@
 
 						for (var f in file) {
 							// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-							dbx.filesGetTemporaryLink({path: '/dosbox/' + file[f]['url']}).then(function(response) {
+							dbx.filesDownload({path: '/dosbox/' + file[f]['url']}).then(function(response) {
 								for (var i in file) {
 									// noinspection JSUnfilteredForInLoop
 									if (response['metadata']['name'].toLowerCase() === file[i]['url'].toLowerCase()) {
@@ -885,9 +885,9 @@
 						}, 100);
 					} else {
 						// noinspection JSUnresolvedFunction
-						dbx.filesGetTemporaryLink({path: '/dosbox/' + file}).then(function(response) {
+						dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
-							fs.extract(response.link).then(function() {
+							fs.extract(URL.createObjectURL(response.result.fileBlob)).then(function() {
 								started = true;
 								main(args).then(function(ci) {
 									window.ci = ci;
