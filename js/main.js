@@ -832,7 +832,7 @@
 
 									return filename;
 								}),
-								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.result.fileBlob))),
+								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.fileBlob))),
 								DosBoxLoader.extraArgs(args),
 								DosBoxLoader.startExe(executable)));
 						emulator.start({waitAfterDownloading: false});
@@ -892,7 +892,7 @@
 						dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
 							console.log(response);
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
-							fs.extract(URL.createObjectURL(response.result.fileBlob)).then(function() {
+							fs.extract(URL.createObjectURL(response.fileBlob)).then(function() {
 								started = true;
 								main(args).then(function(ci) {
 									window.ci = ci;
