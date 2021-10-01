@@ -743,7 +743,7 @@
 		"name": "Digger (CGA) (PC Booter)",
 		"notes": "DOSBOX: Display garbled for DIGGER.EXE",
 		"executable": "./DIGGER4.COM",
-		"args": ["-c", "cycles=1000","-c", "machine=cga"],
+		"args": ["-c", "config -set \"cpu cycles=400\"", "-c", "config -set \"dosbox machine=cga\""],
 		"file": "digger.zip",
 		"size": 187213,
 		"hardware": {
