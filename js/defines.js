@@ -40,7 +40,7 @@ if (typeof btoa === 'undefined') {
 
 // endregion
 
-window['DROPBOX_TOKEN']			= atob('Sm1GME5BajVlZ0lBQUFBQUFBQUFBUS0tX1RyV1g1RkhlN0JqNHdKdkdjQzNpNGVkSFRNYnBjYTBwZHVDQXdnRg==');
+window['DROPBOX_TOKEN']			= atob('SU5MVFV4QnBlRjBBQUFBQUFBQUFBZTRpQ2o0SUpwX0RXX0VRVl9ZWGJqT1NFbUhXeElFa3gzRloyTUNudzItTg==');
 
 (function() {
 	var externallyFramed;

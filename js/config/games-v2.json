@@ -1573,6 +1573,7 @@
 					"file": "alleycat.zip",
 					"size": 92289,
 					"executable": ".\\ALLEYCAT.EXE",
+					"args": ["-machine", "cga"],
 					"license": "Commercial",
 					"status": "Playable"
 				} , {
@@ -1580,13 +1581,15 @@
 					"name": "Alley Cat (Alternate) (CGA) (PC Booter)",
 					"file": "alleycat.zip",
 					"size": 92289,
-					"executable": ".\\CAT.EXE"
+					"executable": ".\\CAT.EXE",
+					"args": ["-machine", "cga"]
 				} , {
 					"id": "tandycat",
 					"name": "Alley Cat (CGA) (PCjr) (PC Booter)",
 					"file": "alleycat.zip",
 					"size": 92289,
 					"executable": ".\\TANDYCAT.EXE",
+					"args": ["-machine", "tandy"],
 					"screenshots": [
 						"https://www.mobygames.com/images/shots/l/463593-alley-cat-pc-booter-screenshot-title-screen-pcjr.png", "https://www.mobygames.com/images/shots/l/463594-alley-cat-pc-booter-screenshot-the-cat-is-outside-pcjr.png"
 					]
@@ -2257,7 +2260,7 @@
 					"file": "sbdashb.zip",
 					"size": 221399,
 					"executable": "mem",
-					"args": ["-c", "machine=tandy", "-c", "tandy=on", "-c", "joysticktype=none", "-c", "c:", "-c", "boot BOULDER.IMG"],
+					"args": ["-machine", "tandy", "-c", "c:", "-c", "boot BOULDER.IMG"],
 					"cycles": 200
 				} , {
 					"id": "bdashck",
@@ -2349,6 +2352,7 @@
 					"file": "digger.zip",
 					"size": 187213,
 					"executable": ".\\DIGGER4.COM",
+					"args": ["-machine", "cga"],
 					"cycles": 1000,
 					"license": "Commercial",
 					"status": "Playable",
@@ -2365,6 +2369,7 @@
 					"file": "digger.zip",
 					"size": 187213,
 					"executable": ".\\DIGGER3.COM",
+					"args": ["-machine", "vga"],
 					"cycles": 1000,
 					"license": "Commercial",
 					"status": "Playable"
@@ -2374,6 +2379,7 @@
 					"file": "digger.zip",
 					"size": 187213,
 					"executable": ".\\DIGGER.EXE",
+					"args": ["-machine", "vga"],
 					"cycles": 1000,
 					"license": "Shareware",
 					"status": "Playable"
@@ -2383,6 +2389,7 @@
 					"file": "digger.zip",
 					"size": 187213,
 					"executable": ".\\DIGGERRE.EXE",
+					"args": ["-machine", "vga"],
 					"license": "Freeware",
 					"status": "Playable",
 					"links": {
