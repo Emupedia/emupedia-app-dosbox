@@ -267,11 +267,11 @@
 				'//emuos.org/beta/emuos/js/libraries/i18next-19.4.4.min'
 		],
 		'jquery': [
-				'libraries/jquery-3.5.0.min',
-				'/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emupedia.net/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emuos.net/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emuos.org/beta/emuos/js/libraries/jquery-3.5.0.min'
+				'libraries/jquery-3.6.0.min',
+				'/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emupedia.net/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emuos.net/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emuos.org/beta/emuos/js/libraries/jquery-3.6.0.min'
 		],
 		'jquery-1.x': [
 				'libraries/jquery-1.12.4.min',
@@ -288,11 +288,11 @@
 				'//emuos.org/beta/emuos/js/libraries/jquery-2.2.4.min'
 		],
 		'jquery-3.x': [
-				'libraries/jquery-3.5.0.min',
-				'/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emupedia.net/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emuos.net/beta/emuos/js/libraries/jquery-3.5.0.min',
-				'//emuos.org/beta/emuos/js/libraries/jquery-3.5.0.min'
+				'libraries/jquery-3.6.0.min',
+				'/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emupedia.net/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emuos.net/beta/emuos/js/libraries/jquery-3.6.0.min',
+				'//emuos.org/beta/emuos/js/libraries/jquery-3.6.0.min'
 		],
 		'jquery-ajax-retry': [
 				'libraries/jquery-ajax-retry-0.2.8.min',
@@ -498,11 +498,11 @@
 				'//emuos.org/beta/emuos/js/libraries/polyfill-es6-custom-event-1.0.7'
 		],
 		'polyfill-es6-fetch': [
-				'libraries/polyfill-es6-fetch-3.0.0',
-				'/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0',
-				'//emupedia.net/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0',
-				'//emuos.net/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0',
-				'//emuos.org/beta/emuos/js/libraries/polyfill-es6-fetch-3.0.0'
+				'libraries/fetch-3.6.2',
+				'/beta/emuos/js/libraries/fetch-3.6.2',
+				'//emupedia.net/beta/emuos/js/libraries/fetch-3.6.2',
+				'//emuos.net/beta/emuos/js/libraries/fetch-3.6.2',
+				'//emuos.org/beta/emuos/js/libraries/fetch-3.6.2'
 		],
 		'polyfill-es6-html-imports': [
 				'libraries/polyfill-es6-html-imports-1.2.4.min',
@@ -512,11 +512,11 @@
 				'//emuos.org/beta/emuos/js/libraries/polyfill-es6-html-imports-1.2.4.min'
 		],
 		'polyfill-es6-promise': [
-				'libraries/polyfill-es6-promise-4.2.8.min',
-				'/beta/emuos/js/libraries/polyfill-es6-promise-4.2.8.min',
-				'//emupedia.net/beta/emuos/js/libraries/polyfill-es6-promise-4.2.8.min',
-				'//emuos.net/beta/emuos/js/libraries/polyfill-es6-promise-4.2.8.min',
-				'//emuos.org/beta/emuos/js/libraries/polyfill-es6-promise-4.2.8.min'
+				'libraries/promise-4.2.8.min',
+				'/beta/emuos/js/libraries/promise-4.2.8.min',
+				'//emupedia.net/beta/emuos/js/libraries/promise-4.2.8.min',
+				'//emuos.net/beta/emuos/js/libraries/promise-4.2.8.min',
+				'//emuos.org/beta/emuos/js/libraries/promise-4.2.8.min'
 		],
 		'polyfill-es6-web-components': [
 				'libraries/polyfill-es6-web-components-2.4.3.min',
