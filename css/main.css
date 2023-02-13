@@ -214,17 +214,17 @@ canvas {
 
 .v2 .list-dropdown-v1 {
 	display: none;
-	width: 182px;
+	width: 500px;
 }
 
 .v2 .list-dropdown-v2 {
 	display: inline-block;
-	width: 182px;
+	width: 300px;
 }
 
 .v2 .options-dropdown {
 	display: inline-block;
-	width: 190px;
+	width: 300px;
 }
 
 /*noinspection CssOverwrittenProperties,DuplicatedCode*/
