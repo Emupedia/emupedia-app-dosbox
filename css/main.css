@@ -339,10 +339,12 @@ canvas {
 	width: 100%;
 	height: 100%;
 	height: calc(100% - 22px);
+	margin: auto;
 }
 
 .v2 canvas {
 	height: 100%;
+	margin: auto;
 }
 
 .v2 .select2-container--bootstrap4 {
