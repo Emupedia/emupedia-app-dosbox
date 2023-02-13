@@ -1095,6 +1095,40 @@
 		"screenshots": ["https://www.mobygames.com/images/shots/l/953-golden-axe-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/954-golden-axe-dos-screenshot-choose-your-destiny.gif"],
 		"clones": []
 	} , {
+		"id": "fifa94",
+		"group": "FIFA",
+		"name": "FIFA International Soccer (VGA) (Commercial)",
+		"executable": "./FIFA.EXE",
+		"mode": "asm",
+		"sync": true,
+		"args": ["-c", "cputype=386_prefetch"],
+		"file": "fifa94.zip",
+		"size": 2727071,
+		"hardware": {
+			"input": ["Keyboard"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": ["320x200"],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1994,
+		"genre": "Arcade Sports",
+		"developer": "Electronic Arts Canada",
+		"publisher": "Electronic Arts, Inc.",
+		"copyright": "Electronic Arts, Inc.",
+		"license": "Commercial",
+		"status": "Nothing",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/FIFA_International_Soccer"
+		},
+		"screenshots": ["https://www.mobygames.com/images/shots/l/9041-fifa-international-soccer-dos-screenshot-title.gif", "https://www.mobygames.com/images/shots/l/194285-fifa-international-soccer-dos-screenshot-penalty.png", "https://www.mobygames.com/images/shots/l/194287-fifa-international-soccer-dos-screenshot-the-cup-table.png"],
+		"clones": []
+	} , {
 		"id": "got",
 		"group": "God of Thunder",
 		"name": "God of Thunder (VGA) (Freeware)",

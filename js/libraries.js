@@ -183,11 +183,11 @@
 				'//emuos.org/beta/emuos/js/libraries/datatables-select-bootstrap4-1.3.1.min'
 		],
 		'dropbox': [
-				'libraries/dropbox-10.11.0.min',
-				'/beta/emuos/js/libraries/dropbox-10.11.0.min',
-				'//emupedia.net/beta/emuos/js/libraries/dropbox-10.11.0.min',
-				'//emuos.net/beta/emuos/js/libraries/dropbox-10.11.0.min',
-				'//emuos.org/beta/emuos/js/libraries/dropbox-10.11.0.min'
+				'libraries/dropbox-10.32.0.min',
+				'/beta/emuos/js/libraries/dropbox-10.32.0.min',
+				'//emupedia.net/beta/emuos/js/libraries/dropbox-10.32.0.min',
+				'//emuos.net/beta/emuos/js/libraries/dropbox-10.32.0.min',
+				'//emuos.org/beta/emuos/js/libraries/dropbox-10.32.0.min'
 		],
 		'dropbox-team': [
 				'libraries/dropbox-team-4.0.30.min',

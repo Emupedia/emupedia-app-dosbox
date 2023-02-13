@@ -881,9 +881,7 @@
 				"links": {
 					"wikipedia": "https://en.wikipedia.org/wiki/Arcade_Volleyball"
 				},
-				"screenshots": [
-					"images/screenshots/avolley.gif"
-				],
+				"screenshots": ["images/screenshots/avolley.gif"],
 				"versions": [{
 					"id": "avolley",
 					"name": "Arcade Volleyball (CGA)",
@@ -895,9 +893,43 @@
 					"links": {
 						"wikipedia": "https://en.wikipedia.org/wiki/Arcade_Volleyball"
 					},
-					"screenshots": [
-						"images/screenshots/avolley.gif"
-					]
+					"screenshots": ["images/screenshots/avolley.gif"]
+				}]
+			} , {
+				"id": "fifa94",
+				"name": "FIFA International Soccer",
+				"hardware": {
+					"input": ["Keyboard"],
+					"video": {
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": ["320x200"],
+							"colors": 256
+						}
+					},
+					"sound": ["PC Speaker", "Sound Blaster"	]
+				},
+				"language": "English",
+				"year": 1994,
+				"developer": "Electronic Arts Canada",
+				"publisher": "Electronic Arts, Inc.",
+				"links": {
+					"wikipedia": "https://en.wikipedia.org/wiki/FIFA_International_Soccer"
+				},
+				"screenshots": ["https://www.mobygames.com/images/shots/l/9041-fifa-international-soccer-dos-screenshot-title.gif", "https://www.mobygames.com/images/shots/l/194285-fifa-international-soccer-dos-screenshot-penalty.png", "https://www.mobygames.com/images/shots/l/194287-fifa-international-soccer-dos-screenshot-the-cup-table.png"],
+				"versions": [{
+					"id": "fifa94",
+					"name": "FIFA International Soccer",
+					"file": "fifa94.zip",
+					"size": 2727071,
+					"executable": ".\\FIFA.EXE",
+					"args": ["-c", "cputype=386_prefetch"],
+					"license": "Commercial",
+					"status": "Playable",
+					"links": {
+						"wikipedia": "https://en.wikipedia.org/wiki/FIFA_International_Soccer"
+					},
+					"screenshots": ["https://www.mobygames.com/images/shots/l/9041-fifa-international-soccer-dos-screenshot-title.gif", "https://www.mobygames.com/images/shots/l/194285-fifa-international-soccer-dos-screenshot-penalty.png", "https://www.mobygames.com/images/shots/l/194287-fifa-international-soccer-dos-screenshot-the-cup-table.png"]
 				}]
 			}]
 		} , {
@@ -944,9 +976,7 @@
 				"links": {
 					"wikipedia": "https://en.wikipedia.org/wiki/The_Computer_Edition_of_Risk:_The_World_Conquest_Game"
 				},
-				"screenshots": [
-					"https://www.mobygames.com/images/shots/l/106561-the-computer-edition-of-risk-the-world-conquest-game-dos-screenshot.gif", "https://www.mobygames.com/images/shots/l/2123-the-computer-edition-of-risk-the-world-conquest-game-dos-screenshot.gif"
-				],
+				"screenshots": ["https://www.mobygames.com/images/shots/l/106561-the-computer-edition-of-risk-the-world-conquest-game-dos-screenshot.gif", "https://www.mobygames.com/images/shots/l/2123-the-computer-edition-of-risk-the-world-conquest-game-dos-screenshot.gif"],
 				"versions": [{
 					"id": "risk1",
 					"name": "Risk: The World Conquest Game",
@@ -3786,8 +3816,7 @@
 					},
 					"screenshots": [
 						"images/screenshots/win95.png"
-					],
-					"versions": []
+					]
 				}]
 			}]
 		} , {
