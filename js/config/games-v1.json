@@ -1031,7 +1031,7 @@
 		"executable": "./DUNE2.EXE",
 		"sync": false,
 		"file": "dune2.zip",
-		"size": 4384799,
+		"size": 4541661,
 		"hardware": {
 			"input": ["Keyboard", "Mouse"],
 			"video": {
