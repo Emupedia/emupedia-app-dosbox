@@ -1021,7 +1021,7 @@
 						// noinspection JSUnresolvedFunction
 						index_selected = parseInt($.url().param('game'), 10) || 0;
 						// noinspection JSUnresolvedFunction
-						var game_selected = typeof $.url().param('gamev1') !== 'undefined' ? $.url().param('gamev1') : $list_dropdown_v1.find('option[value="'+ index_selected +'"]').prop('selected', true).attr('selected', true).data('game-id');
+						var game_selected = typeof $.url().param('gamev1') !== 'undefined' ? $list_dropdown_v1.find('option[data-game-id="'+ $.url().param('gamev1') +'"]').prop('selected', true).attr('selected', true).data('game-id') : $list_dropdown_v1.find('option[value="'+ index_selected +'"]').prop('selected', true).attr('selected', true).data('game-id');
 
 						// noinspection DuplicatedCode
 						for (var game in games_v1['games']) {
