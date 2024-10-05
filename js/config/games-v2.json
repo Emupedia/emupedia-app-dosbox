@@ -57,15 +57,13 @@
 						"Keyboard", "Mouse"
 					],
 					"video": {
-						"EGA": [
-							{
-								"name": "Enhanced Graphics Adapter",
-								"resolutions": [
-									"320x200"
-								],
-								"colors": 16
-							}
-						]
+						"EGA": {
+							"name": "Enhanced Graphics Adapter",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 16
+						}
 					},
 					"sound": [
 						"PC Speaker", "Sound Blaster"
@@ -99,6 +97,48 @@
 					"license": "Shareware",
 					"status": "Playable",
 					"screenshots": ["https://www.mobygames.com/images/shots/l/664-loom-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/669-loom-dos-screenshot-attacked-by-a-swan.gif"]
+				}]
+			} , {
+				"id": "indiana",
+				"name": "Indiana Jones and the Fate Of Atlantis",
+				"hardware": {
+					"input": [
+						"Keyboard", "Mouse"
+					],
+					"video": {
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 256
+						}
+					},
+					"sound": [
+						"PC Speaker", "Covox Sound Master II", "Adlib", "Roland MT-32 (and LAPC-I)", "Sound Blaster", "Sound Blaster Pro"
+					]
+				},
+				"language": "English",
+				"year": 1992,
+				"developer": "Lucasfilm Games",
+				"publisher": "Lucasfilm Games",
+				"copyright": "The Walt Disney Company",
+				"links": {
+					"gog": "https://www.gog.com/en/game/indiana_jones_and_the_fate_of_atlantis",
+					"steam": "https://store.steampowered.com/app/6010/Indiana_Jones_and_the_Fate_of_Atlantis",
+					"wikipedia": "https://en.wikipedia.org/wiki/Indiana_Jones_and_the_Fate_of_Atlantis",
+					"youtube": "https://www.youtube.com/watch?v=LZZXJ3zCRDQ"
+				},
+				"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"],
+				"versions": [{
+					"id": "indianademo",
+					"name": "Demo version",
+					"file": "indyjones.zip",
+					"size": 672359,
+					"executable": ".\\PLAYFATE.EXE S",
+					"license": "Shareware",
+					"status": "Playable",
+					"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
 				}]
 			} , {
 				"id": "monkey1",
@@ -1993,15 +2033,13 @@
 						"Keyboard", "Gamepad/Joystick"
 					],
 					"video": {
-						"VGA": [
-							{
-								"name": "Video Graphics Array",
-								"resolutions": [
-									"320x200"
-								],
-								"colors": 256
-							}
-						]
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 256
+						}
 					},
 					"sound": [
 						"PC Speaker", "Sound Blaster"
@@ -2437,33 +2475,27 @@
 						"Keyboard", "Mouse"
 					],
 					"video": {
-						"CGA": [
-							{
-								"name": "Color Graphics Adapter",
-								"resolutions": [
-									"320x200"
-								],
-								"colors": 4
-							}
-						],
-						"EGA": [
-							{
-								"name": "Enhanced Graphics Adapter",
-								"resolutions": [
-									"320x200"
-								],
-								"colors": 16
-							}
-						],
-						"VGA": [
-							{
-								"name": "Video Graphics Array",
-								"resolutions": [
-									"320x200"
-								],
-								"colors": 256
-							}
-						]
+						"CGA": {
+							"name": "Color Graphics Adapter",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 4
+						},
+						"EGA": {
+							"name": "Enhanced Graphics Adapter",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 16
+						},
+						"VGA":{
+							"name": "Video Graphics Array",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 256
+						}
 					},
 					"sound": [
 						"PC Speaker", "Adlib", "Sound Blaster"
