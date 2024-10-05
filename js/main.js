@@ -1,9 +1,5 @@
 // noinspection ThisExpressionReferencesGlobalObjectJS,JSUnusedLocalSymbols
 (function(global) {
-	console.log('╔═╗╔╦╗╦ ╦╔═╗╔═╗╔╦═╗╦╔═╗\n' +
-				'╠═ ║║║║ ║╠═╝╠═  ║ ║║╠═╣\n' +
-				'╚═╝╩ ╩╚═╝╩  ╚═╝═╩═╝╩╩ ╩');
-
 	var $html							= null;
 	var $body							= null;
 	var $window							= null;

@@ -1,4 +1,5 @@
-// noinspection ThisExpressionReferencesGlobalObjectJS
+// noinspection ThisExpressionReferencesGlobalObjectJS,JSAnnotator
+
 (function(global) {
 	// Error Handling
 	global.onerror = function(message, url, lineNumber) {
@@ -20,11 +21,11 @@
 
 	// region Platform
 
-	var platform										= typeof global.navigator.platform !== 'undefined' ? global.navigator.platform : '';
-	var browser											= typeof global.navigator.userAgent !== 'undefined' ? global.navigator.userAgent : '';
-	var version											= typeof global.navigator.appVersion !== 'undefined' ? global.navigator.appVersion : '';
-	var vendor											= typeof global.navigator.vendor !== 'undefined' ? global.navigator.vendor : '';
-	var oscpu											= typeof global.navigator.oscpu !== 'undefined' ? global.navigator.oscpu : '';
+	var platform									= typeof global.navigator.platform !== 'undefined' ? global.navigator.platform : '';
+	var browser									= typeof global.navigator.userAgent !== 'undefined' ? global.navigator.userAgent : '';
+	var version									= typeof global.navigator.appVersion !== 'undefined' ? global.navigator.appVersion : '';
+	var vendor									= typeof global.navigator.vendor !== 'undefined' ? global.navigator.vendor : '';
+	var oscpu								= typeof global.navigator.oscpu !== 'undefined' ? global.navigator.oscpu : '';
 
 	$sys.platform.is64									= browser.indexOf('WOW64') !== -1 || browser.indexOf('Win64') !== -1 || browser.indexOf('amd64') !== -1 || browser.indexOf('x86_64') !== -1;
 	$sys.platform.is32									= !$sys.platform.is64 ? (browser.indexOf('WOW32') !== -1 || browser.indexOf('Win32') !== -1 || browser.indexOf('i386') !== -1 || browser.indexOf('i686') !== -1) : false;
@@ -209,13 +210,13 @@
 
 	// region Features
 
-	var audio											= global.document.createElement('audio');
-	var canvas2D										= global.document.createElement('canvas');
-	var context2D										= typeof canvas2D !== 'undefined' ? (typeof canvas2D.getContext === 'function' ? canvas2D.getContext('2d') : false) : false;
-	var canvasWEBGL										= null;
-	var contextWEBGL									= false;
+	var audio								= global.document.createElement('audio');
+	var canvas2D							= global.document.createElement('canvas');
+	var context2D			= typeof canvas2D !== 'undefined' ? (typeof canvas2D.getContext === 'function' ? canvas2D.getContext('2d') : false) : false;
+	var canvasWEBGL									= null;
+	var contextWEBGL								= false;
 	var canvasWEBGL2									= null;
-	var contextWEBGL2									= false;
+	var contextWEBGL2								= false;
 
 	if (context2D) {
 		try {
@@ -245,6 +246,7 @@
 		}
 	})();
 	$sys.feature.URL_BLOB								= $sys.feature.URL_PARSER && 'revokeObjectURL' in URL && 'createObjectURL' in URL;
+	// noinspection JSVoidFunctionReturnValueUsed
 	$sys.feature.DATA_URL								= (function() {
 		function testlimit() {
 			// noinspection JSCheckFunctionSignatures
@@ -328,6 +330,7 @@
 	// noinspection JSUnresolvedVariable
 	$sys.feature.PERFORMANCE							= !!global.performance ? true : !!global.webkitPerformance || !!global.mozPerformance || !!global.msPerformance || !!global.oPerformance;
 	$sys.feature.TIMERS									= $sys.feature.ANIMATION_FRAME && $sys.feature.PERFORMANCE;
+	$sys.feature.CLIPBOARD								= !!global.navigator.clipboard;
 	$sys.feature.CUSTOM_ELEMENTS_V0						= 'registerElement' in global.document;
 	$sys.feature.CUSTOM_ELEMENTS_V1						= 'customElements' in global;
 	$sys.feature.CUSTOM_ELEMENTS						= $sys.feature.CUSTOM_ELEMENTS_V0 || $sys.feature.CUSTOM_ELEMENTS_V1;
@@ -528,7 +531,7 @@
 	$sys.feature.ES6_ARRAY								= !!(Array.prototype && Array.prototype.copyWithin && Array.prototype.fill && Array.prototype.find && Array.prototype.findIndex && Array.prototype.keys && Array.prototype.entries && Array.prototype.values && Array.from && Array.of);
 	$sys.feature.ES6_FUNCTION							= (function() {
 		try {
-			eval('()=>{}');
+			eval('() => {}');
 		} catch (e) {
 			return false;
 		}
@@ -643,9 +646,13 @@
 	// region API
 
 	$sys.api.banner = function() {
-		global.console.log('╔═╗╔╦╗╦ ╦╔═╗╔═╗╔╦═╗╦╔═╗\n' +
-						   '╠═ ║║║║ ║╠═╝╠═  ║ ║║╠═╣\n' +
-						   '╚═╝╩ ╩╚═╝╩  ╚═╝═╩═╝╩╩ ╩');
+		global.console.log('%c                                 \n' +
+			'                                 \n' +
+			'     ╔═╗╔╦╗╦ ╦╔═╗╔═╗╔╦═╗╦╔═╗     \n' +
+			'     ╠═ ║║║║ ║╠═╝╠═  ║ ║║╠═╣     \n' +
+			'     ╚═╝╩ ╩╚═╝╩  ╚═╝═╩═╝╩╩ ╩     \n' +
+			'                                 \n' +
+			'                                 \n', 'background: radial-gradient(circle, #1a2049 0%, #13162f 100%); font-size: 20px; line-height: 1; color: yellow; text-shadow: 1px 1px #5B4FFF;');
 		return this;
 	};
 
@@ -812,6 +819,9 @@
 			Feature: 'TIMERS',
 			Value: $sys.feature.TIMERS ? 'TRUE' : 'FALSE'
 		} , {
+			Feature: 'CLIPBOARD',
+			Value: $sys.feature.CLIPBOARD ? 'TRUE' : 'FALSE'
+		} , {
 			Feature: 'WEBCOMPONENTS',
 			Value: $sys.feature.WEBCOMPONENTS ? 'TRUE' : 'FALSE'
 		} , {
@@ -900,31 +910,14 @@
 			Value: $sys.feature.BATTERY ? 'TRUE' : 'FALSE'
 		}];
 
-		// Microsoft EdgeHTML <= 18.18363 (64-bit) console table is broken
+		// Microsoft Internet Explorer <= 11.900.18362.0 and Microsoft EdgeHTML <= 18.18363 (64-bit) console table is broken
 		// noinspection DuplicatedCode
-		if ($sys.browser.isEdgeHTML) {
+		if ($sys.browser.isIE || $sys.browser.isEdgeHTML) {
 			for (var d in dump) {
 				// noinspection JSUnfilteredForInLoop
 				console.log(dump[d]);
 			}
-
-			/*var chunks = function(array, size) {
-				var results = [];
-
-				while (array.length) {
-					results.push(array.splice(0, size));
-				}
-
-				return results;
-			};
-
-			dump = chunks(dump, 50);
-
-			for (var d in dump) {
-				// noinspection JSUnfilteredForInLoop
-				console.table(dump[d]);
-			}*/
-		} else {
+		} else if (typeof console.table === 'function') {
 			console.table(dump);
 		}
 	};
@@ -1038,7 +1031,7 @@
 
 	// noinspection DuplicatedCode
 	$sys.api.fetch = function(opts, onsuccess, onerror, onprogress) {
-		opts = typeof opts === 'string' ? {url: opts} : opts;
+		opts = typeof opts === 'string' ? { url: opts } : opts;
 
 		// noinspection ES6ConvertVarToLetConst
 		var data = opts.data;
@@ -1087,12 +1080,15 @@
 			// noinspection JSValidateTypes
 			xhr.withCredentials = 'true';
 		}
+
 		if (onerror && 'onerror' in xhr) {
 			xhr.onerror = onerror;
 		}
+
 		if (onprogress && xhr.upload && 'onprogress' in xhr.upload) {
 			if (data) {
 				xhr.upload.onprogress = function(e) {
+					// noinspection JSDeprecatedSymbols
 					onprogress.call(xhr, e, event.loaded / event.total);
 				};
 			} else {
@@ -1122,6 +1118,7 @@
 
 		xhr.onreadystatechange = function(e) {
 			if (xhr.readyState === 4) { // The request is complete
+				// noinspection JSUnresolvedVariable
 				if (xhr.status === 200 || // Response OK
 					xhr.status === 304 || // Not Modified
 					xhr.status === 308 || // Permanent Redirect
