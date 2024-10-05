@@ -1345,7 +1345,8 @@
 		"developer": "LucasArts Entertainment Company, LLC",
 		"publisher": "LucasArts Entertainment Company, LLC",
 		"copyright": "Walt Disney Company, The",
-		"license": "Demo",
+		"license": "Shareware",
+		"version": "DEMO",
 		"status": "Playable",
 		"hardware": {
 			"input": ["Keyboard", "Mouse"],
@@ -1367,7 +1368,26 @@
 			"youtube": "https://www.youtube.com/watch?v=LZZXJ3zCRDQ"
 		},
 		"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"],
-		"clones": []
+		"clones": [{
+			"id": "indytalkiedemo",
+			"name": "Indiana Jones and the Fate Of Atlantis (VGA) (Talkie) (Demo)",
+			"file": "indytalkiedemo.zip",
+			"executable": "./FATE.EXE",
+			"size": 900805,
+			"license": "Shareware",
+			"version": "DEMO",
+			"status": "Playable",
+			"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
+		} , {
+			"id": "indianatalkiecd",
+			"name": "Indiana Jones and the Fate Of Atlantis (VGA) (Talkie) (CD) (Retail)",
+			"file": "indyatlantis.zip",
+			"executable": ".\\ATLANTIS.EXE",
+			"size": 74772490,
+			"license": "Commercial",
+			"status": "Playable",
+			"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
+		}]
 	} , {
 		"id": "jazzcd",
 		"group": "Jazz Jackrabbit",

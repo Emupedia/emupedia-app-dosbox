@@ -139,6 +139,24 @@
 					"license": "Shareware",
 					"status": "Playable",
 					"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
+				} , {
+					"id": "indianatalkiedemo",
+					"name": "Talkie Demo version",
+					"file": "indytalkiedemo.zip",
+					"size": 900805,
+					"executable": ".\\FATE.EXE",
+					"license": "Shareware",
+					"status": "Playable",
+					"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
+				} , {
+					"id": "indianatalkiecd",
+					"name": "Talkie Retail CD version",
+					"file": "indyatlantis.zip",
+					"size": 74772490,
+					"executable": ".\\ATLANTIS.EXE",
+					"license": "Commercial",
+					"status": "Playable",
+					"screenshots": ["https://cdn.mobygames.com/screenshots/8793035-indiana-jones-and-the-fate-of-atlantis-dos-title-screen.png", "https://cdn.mobygames.com/screenshots/9498897-indiana-jones-and-the-fate-of-atlantis-dos-finding-the-atlantean.png"]
 				}]
 			} , {
 				"id": "monkey1",
