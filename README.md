@@ -36,10 +36,10 @@ Similar organizations that do [digital preservation](https://en.wikipedia.org/wi
 
 * <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emupedia.net/beta/emuos/](https://emupedia.net/beta/emuos/)
 * <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emupedia.org/beta/emuos/](https://emupedia.org/beta/emuos/)
-* <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emupedia.games/beta/emuos/](https://emupedia.org/beta/emuos/)
+* <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emupedia.games/beta/emuos/](https://emupedia.games/beta/emuos/)
 * <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emuos.net/beta/emuos/](https://emuos.net/beta/emuos/)
 * <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emuos.org/beta/emuos/](https://emuos.org/beta/emuos/)
-* <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emuos.games/beta/emuos/](https://emuos.org/beta/emuos/)
+* <sub><img loading="lazy" width="18" height="18" alt="" src="https://emupedia.net/beta/emuos/assets/images/logos/emupedia/emupedia-logo.svg" /></sub> [https://emuos.games/beta/emuos/](https://emuos.games/beta/emuos/)
 
 ## 🌍 <sub>Browser support</sub>
 <details>
