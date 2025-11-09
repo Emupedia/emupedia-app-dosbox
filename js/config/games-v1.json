@@ -457,8 +457,15 @@
 		"id": "catalog",
 		"group": "Catalog",
 		"name": "Catalog",
-		"executable": "./CATALOG/CATALOG.EXE",
-		"file": "catalog.zip",
+		"executable": "d:\\runapp CATALOG.EXE",
+		"args": ["-c", "cycles=max", "-c", "mount c emulator/a/CATALOG"],
+		"files": [{
+			"file": "win31.zip",
+			"mount": "d"
+		} , {
+			"file": "catalog.zip",
+			"mount": "a"
+		}],
 		"size": 4168729,
 		"hardware": {
 			"input": ["Keyboard"],
