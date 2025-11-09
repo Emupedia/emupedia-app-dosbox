@@ -398,3 +398,100 @@ canvas {
 }
 
 /* endregion */
+
+/* region Progress Bar Styles */
+
+.progress-container {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 350px;
+	max-height: 400px;
+	overflow-y: auto;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.progress-bar-wrapper {
+	margin-bottom: 15px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+}
+
+.progress-label {
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.progress-bar-container {
+	width: 100%;
+	height: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 5px;
+}
+
+.progress-bar {
+	height: 100%;
+	background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+	border-radius: 10px;
+	transition: width 0.3s ease;
+	position: relative;
+}
+
+.progress-bar.complete {
+	background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+}
+
+.progress-bar.cached {
+	background: linear-gradient(90deg, #2196f3 0%, #03a9f4 100%);
+}
+
+.progress-bar.error {
+	background: linear-gradient(90deg, #f44336 0%, #e91e63 100%);
+}
+
+.progress-percent {
+	color: #fff;
+	font-size: 11px;
+	text-align: right;
+	margin-bottom: 2px;
+}
+
+.progress-status {
+	color: #aaa;
+	font-size: 10px;
+	text-align: left;
+}
+
+/* Scrollbar styling for progress container */
+.progress-container::-webkit-scrollbar {
+	width: 8px;
+}
+
+.progress-container::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 4px;
+}
+
+.progress-container::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+}
+
+.progress-container::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+/* endregion */

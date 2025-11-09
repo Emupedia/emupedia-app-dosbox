@@ -18,6 +18,8 @@
 	var lightslider					= null;
 	var first						= true;
 	var started						= false;
+	var cacheManager					= null;
+	var progressManager				= null;
 
 	// noinspection JSFileReferences,JSUnresolvedFunction,JSUnresolvedVariable
 	requirejs.config({
@@ -440,6 +442,82 @@
 				}
 			}
 
+			// Helper function to download files with caching and progress tracking
+			function downloadFileWithCache(path, fileName, progressId) {
+				return new Promise(function(resolve, reject) {
+					// Check cache first
+					cacheManager.get(path).then(function(cachedData) {
+						if (cachedData && cachedData.blob) {
+							// File is cached, use it
+							console.log('Using cached file:', path);
+							progressManager.createProgressBar(progressId, fileName);
+							progressManager.setCached(progressId);
+							resolve({
+								result: {
+									name: fileName,
+									fileBlob: cachedData.blob
+								}
+							});
+						} else {
+							// File not cached, download from Dropbox
+							console.log('Downloading from Dropbox:', path);
+							progressManager.createProgressBar(progressId, fileName);
+							progressManager.setStatus(progressId, 'Connecting...');
+
+							// Use Dropbox API with progress tracking
+							var xhr = new XMLHttpRequest();
+							xhr.open('POST', 'https://content.dropboxapi.com/2/files/download', true);
+							xhr.setRequestHeader('Authorization', 'Bearer ' + window['DROPBOX_TOKEN']);
+							xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({ path: path }));
+							xhr.responseType = 'blob';
+
+							xhr.onprogress = function(event) {
+								if (event.lengthComputable) {
+									progressManager.updateProgress(progressId, event.loaded, event.total);
+								}
+							};
+
+							xhr.onload = function() {
+								if (xhr.status === 200) {
+									var blob = xhr.response;
+									var metadataHeader = xhr.getResponseHeader('Dropbox-API-Result');
+									var metadata = metadataHeader ? JSON.parse(metadataHeader) : {};
+
+									// Cache the downloaded file
+									cacheManager.set(path, blob, metadata).then(function() {
+										console.log('File cached successfully:', path);
+									}).catch(function(error) {
+										console.warn('Failed to cache file:', error);
+									});
+
+									progressManager.setComplete(progressId);
+									resolve({
+										result: {
+											name: metadata.name || fileName,
+											fileBlob: blob
+										}
+									});
+								} else {
+									progressManager.setError(progressId, 'HTTP ' + xhr.status);
+									reject(new Error('Download failed: ' + xhr.status));
+								}
+							};
+
+							xhr.onerror = function() {
+								progressManager.setError(progressId, 'Network error');
+								reject(new Error('Network error during download'));
+							};
+
+							xhr.send();
+						}
+					}).catch(function(error) {
+						console.error('Cache check error:', error);
+						// Fallback to direct download if cache check fails
+						dbx.filesDownload({ path: path }).then(resolve).catch(reject);
+					});
+				});
+			}
+
 			function init() {
 				// noinspection JSUnresolvedFunction
 				$preview.hide();
@@ -752,59 +830,61 @@
 
 				if (Array.isArray(file)) {
 					var files = [];
+					var downloadPromises = [];
 
 					for (var f in file) {
-						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-						dbx.filesDownload({ path: '/dosbox/' + file[f]['file'] }).then(function(response) {
-							console.log(response);
-							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
-							files.push(response);
-						}).catch(function(error) {
-							console.log(error);
-						});
+						// noinspection JSUnfilteredForInLoop
+						var filePath = '/dosbox/' + file[f]['file'];
+						var fileName = file[f]['file'];
+						var progressId = 'v1_' + f + '_' + Date.now();
+						
+						// noinspection JSUnfilteredForInLoop
+						downloadPromises.push(
+							downloadFileWithCache(filePath, fileName, progressId)
+						);
 					}
 
-					var int = null;
+					Promise.all(downloadPromises).then(function(responses) {
+						files = responses;
+						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
+						var emulator = new Emulator($canvas.get(0), function() {
+								started = true;
+								setTimeout(function() {
+									// noinspection JSUnresolvedFunction
+									$window.trigger('resize');
+								}, 5000);
+							},
+							new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
+							DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
+								if (filename === 'dosbox.html.mem') {
+									return 'js/dosbox-' + sync + 'sync' + old + '.mem';
+								}
 
-					int = setInterval(function() {
-						if (files.length === file.length) {
-							clearInterval(int);
-							int = null;
-							// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
-							var emulator = new Emulator($canvas.get(0), function() {
-									started = true;
-									setTimeout(function() {
-										// noinspection JSUnresolvedFunction
-										$window.trigger('resize');
-									}, 5000);
-								},
-								new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
-								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
-									if (filename === 'dosbox.html.mem') {
-										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
-									}
+								if (filename === 'dosbox.wasm') {
+									return 'js/dosbox-sync.wasm';
+								}
 
-									if (filename === 'dosbox.wasm') {
-										return 'js/dosbox-sync.wasm';
-									}
-
-									return filename;
-								}),
-								DosBoxLoader.fileSystemKey(name),
-								DosBoxLoader.nativeResolution(640, 480),
-								DosBoxLoader.aspectRatio(640 / 480),
-								DosBoxLoader.scale(1),
-								DosBoxLoader.mountZip(get_file_order(0, file, files).mount, DosBoxLoader.fetchFile('OS File', URL.createObjectURL(get_file_order(0, file, files).blob))),
-								DosBoxLoader.mountZip(get_file_order(1, file, files).mount, DosBoxLoader.fetchFile('Game File', URL.createObjectURL(get_file_order(1, file, files).blob))),
-								DosBoxLoader.extraArgs(args),
-								DosBoxLoader.startExe(executable))
-							);
-							emulator.start({ waitAfterDownloading: false });
-						}
-					}, 100);
+								return filename;
+							}),
+							DosBoxLoader.fileSystemKey(name),
+							DosBoxLoader.nativeResolution(640, 480),
+							DosBoxLoader.aspectRatio(640 / 480),
+							DosBoxLoader.scale(1),
+							DosBoxLoader.mountZip(get_file_order(0, file, files).mount, DosBoxLoader.fetchFile('OS File', URL.createObjectURL(get_file_order(0, file, files).blob))),
+							DosBoxLoader.mountZip(get_file_order(1, file, files).mount, DosBoxLoader.fetchFile('Game File', URL.createObjectURL(get_file_order(1, file, files).blob))),
+							DosBoxLoader.extraArgs(args),
+							DosBoxLoader.startExe(executable))
+						);
+						emulator.start({ waitAfterDownloading: false });
+					}).catch(function(error) {
+						console.error('Error downloading files:', error);
+					});
 				} else {
 					// noinspection JSUnresolvedFunction
-					dbx.filesDownload({ path: '/dosbox/' + file }).then(function(response) {
+					var filePath = '/dosbox/' + file;
+					var progressId = 'v1_single_' + Date.now();
+					
+					downloadFileWithCache(filePath, file, progressId).then(function(response) {
 						console.log(response);
 						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 						var emulator = new Emulator($canvas.get(0), function() {
@@ -836,7 +916,7 @@
 						);
 						emulator.start({ waitAfterDownloading: false });
 					}).catch(function(error) {
-						console.log(error);
+						console.error('Error downloading file:', error);
 					});
 				}
 			}
@@ -849,46 +929,46 @@
 					autolock: true
 				}).ready(function(fs, main) {
 					if (Array.isArray(file)) {
-						var files = [];
+						var downloadPromises = [];
 
 						for (var f in file) {
-							// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-							dbx.filesDownload({ path: '/dosbox/' + file[f]['url'] }).then(function(response) {
-								console.log(response);
-								for (var i in file) {
-									// noinspection JSUnfilteredForInLoop
-									if (response['result']['name'].toLowerCase() === file[i]['url'].toLowerCase()) {
-										// noinspection JSUnfilteredForInLoop
-										response['mount'] = file[i]['mount'];
-										break;
-									}
-								}
-
-								files.push(response);
-							}).catch(function(error) {
-								console.log(error);
-							});
+							// noinspection JSUnfilteredForInLoop
+							var filePath = '/dosbox/' + file[f]['url'];
+							var fileName = file[f]['url'];
+							var progressId = 'v2_' + f + '_' + Date.now();
+							var mountPoint = file[f]['mount'];
+							
+							// noinspection JSUnfilteredForInLoop
+							(function(mount) {
+								downloadPromises.push(
+									downloadFileWithCache(filePath, fileName, progressId).then(function(response) {
+										response['mount'] = mount;
+										return response;
+									})
+								);
+							})(mountPoint);
 						}
 
-						var int = null;
-
-						int = setInterval(function() {
-							if (files.length === file.length) {
-								clearInterval(int);
-								int = null;
-
-								// noinspection JSUnresolvedFunction
-								fs.extractAll([{url: URL.createObjectURL(files[0]['fileBlob']), mountPoint: '/' + files[0]['mount']}, {url: URL.createObjectURL(files[1]['fileBlob']), mountPoint: '/' + files[1]['mount']}]).then(function() {
-									started = true;
-									main(args).then(function(ci) {
-										window.ci = ci;
-									});
+						Promise.all(downloadPromises).then(function(files) {
+							// noinspection JSUnresolvedFunction
+							fs.extractAll([
+								{url: URL.createObjectURL(files[0]['result']['fileBlob']), mountPoint: '/' + files[0]['mount']}, 
+								{url: URL.createObjectURL(files[1]['result']['fileBlob']), mountPoint: '/' + files[1]['mount']}
+							]).then(function() {
+								started = true;
+								main(args).then(function(ci) {
+									window.ci = ci;
 								});
-							}
-						}, 100);
+							});
+						}).catch(function(error) {
+							console.error('Error downloading files:', error);
+						});
 					} else {
 						// noinspection JSUnresolvedFunction
-						dbx.filesDownload({ path: '/dosbox/' + file }).then(function(response) {
+						var filePath = '/dosbox/' + file;
+						var progressId = 'v2_single_' + Date.now();
+						
+						downloadFileWithCache(filePath, file, progressId).then(function(response) {
 							console.log(response);
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 							fs.extract(URL.createObjectURL(response.result.fileBlob)).then(function() {
@@ -897,6 +977,8 @@
 									window.ci = ci;
 								});
 							});
+						}).catch(function(error) {
+							console.error('Error downloading file:', error);
 						});
 					}
 				});
@@ -917,6 +999,40 @@
 			$list_table			= $('.list-table');
 			$preview			= $('.preview');
 			$start				= $('.start');
+
+			// Initialize cache manager and progress manager
+			if (typeof CacheManager !== 'undefined' && typeof ProgressManager !== 'undefined') {
+				cacheManager = new CacheManager();
+				progressManager = new ProgressManager();
+				
+				cacheManager.init().then(function() {
+					console.log('Cache manager initialized successfully');
+				}).catch(function(error) {
+					console.warn('Cache manager initialization failed, caching will be disabled:', error);
+					// Create a fallback cache manager with no-op methods
+					cacheManager = {
+						get: function() { return Promise.resolve(null); },
+						set: function() { return Promise.resolve(); },
+						has: function() { return Promise.resolve(false); }
+					};
+				});
+			} else {
+				console.warn('CacheManager or ProgressManager not available');
+				// Create fallback objects
+				cacheManager = {
+					get: function() { return Promise.resolve(null); },
+					set: function() { return Promise.resolve(); },
+					has: function() { return Promise.resolve(false); }
+				};
+				progressManager = {
+					createProgressBar: function() {},
+					updateProgress: function() {},
+					setStatus: function() {},
+					setComplete: function() {},
+					setError: function() {},
+					setCached: function() {}
+				};
+			}
 
 			// noinspection JSUnresolvedVariable
 			if ($sys.feature.CANVAS && $sys.feature.TYPED_ARRAYS && ($sys.feature.ASMJS || $sys.feature.WEBASSEMBLY)) {
