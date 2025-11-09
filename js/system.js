@@ -21,11 +21,11 @@
 
 	// region Platform
 
-	var platform									= typeof global.navigator.platform !== 'undefined' ? global.navigator.platform : '';
-	var browser									= typeof global.navigator.userAgent !== 'undefined' ? global.navigator.userAgent : '';
-	var version									= typeof global.navigator.appVersion !== 'undefined' ? global.navigator.appVersion : '';
-	var vendor									= typeof global.navigator.vendor !== 'undefined' ? global.navigator.vendor : '';
-	var oscpu								= typeof global.navigator.oscpu !== 'undefined' ? global.navigator.oscpu : '';
+	var platform										= typeof global.navigator.platform !== 'undefined' ? global.navigator.platform : '';
+	var browser											= typeof global.navigator.userAgent !== 'undefined' ? global.navigator.userAgent : '';
+	var version											= typeof global.navigator.appVersion !== 'undefined' ? global.navigator.appVersion : '';
+	var vendor											= typeof global.navigator.vendor !== 'undefined' ? global.navigator.vendor : '';
+	var oscpu											= typeof global.navigator.oscpu !== 'undefined' ? global.navigator.oscpu : '';
 
 	$sys.platform.is64									= browser.indexOf('WOW64') !== -1 || browser.indexOf('Win64') !== -1 || browser.indexOf('amd64') !== -1 || browser.indexOf('x86_64') !== -1;
 	$sys.platform.is32									= !$sys.platform.is64 ? (browser.indexOf('WOW32') !== -1 || browser.indexOf('Win32') !== -1 || browser.indexOf('i386') !== -1 || browser.indexOf('i686') !== -1) : false;

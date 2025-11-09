@@ -2,22 +2,22 @@
 (function(global) {
 	var $html							= null;
 	var $body							= null;
-	var $window							= null;
+	var $window						= null;
 	var $document						= null;
-	var $canvas							= null;
+	var $canvas						= null;
 	var $version_dropdown				= null;
 	var $list_dropdown_v1				= null;
 	var $list_dropdown_v2				= null;
 	var $options_dropdown				= null;
-	var $list_table						= null;
+	var $list_table					= null;
 	var $preview						= null;
 	var $start							= null;
 
-	var dbx								= null;
+	var dbx							= null;
 	var perfect_scrollbar				= null;
-	var lightslider						= null;
-	var first							= true;
-	var started							= false;
+	var lightslider					= null;
+	var first						= true;
+	var started						= false;
 
 	// noinspection JSFileReferences,JSUnresolvedFunction,JSUnresolvedVariable
 	requirejs.config({
@@ -428,9 +428,13 @@
 			function get_file_order(index, file, files) {
 				for (var f in files) {
 					// noinspection JSUnfilteredForInLoop
-					if (files[f]['metadata']['name'] === file[index]) {
+					if (files[f]['result']['name'] === file[index]['file']) {
 						// noinspection JSUnfilteredForInLoop
-						return files[f]['link'];
+						return {
+							name: file[index]['file'],
+							blob: files[f]['result']['fileBlob'],
+							mount: file[index]['mount']
+						};
 					}
 				}
 			}
@@ -761,7 +765,7 @@
 
 					for (var f in file) {
 						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-						dbx.filesDownload({path: '/dosbox/' + file[f]}).then(function(response) {
+						dbx.filesDownload({path: '/dosbox/' + file[f]['file']}).then(function(response) {
 							console.log(response);
 							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
 							files.push(response);
@@ -784,7 +788,7 @@
 									$window.trigger('resize');
 								}, 2500);
 							},
-							new DosBoxLoader(DosBoxLoader.emulatorJS(SYSTEM_FEATURE_WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : (SYSTEM_FEATURE_ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
+							new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
 								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
 									if (filename === 'dosbox.html.mem') {
 										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
@@ -796,8 +800,8 @@
 
 									return filename;
 								}),
-								DosBoxLoader.mountZip('a', DosBoxLoader.fetchFile('OS File', get_file_order(0, file, files))),
-								DosBoxLoader.mountZip('b', DosBoxLoader.fetchFile('Game File', get_file_order(1, file, files))),
+								DosBoxLoader.mountZip(get_file_order(0, file, files).mount, DosBoxLoader.fetchFile('OS File', URL.createObjectURL(get_file_order(0, file, files).blob))),
+								DosBoxLoader.mountZip(get_file_order(1, file, files).mount, DosBoxLoader.fetchFile('Game File', URL.createObjectURL(get_file_order(1, file, files).blob))),
 								DosBoxLoader.extraArgs(args),
 								DosBoxLoader.startExe(executable))
 							);
@@ -854,7 +858,7 @@
 								console.log(response);
 								for (var i in file) {
 									// noinspection JSUnfilteredForInLoop
-									if (response['metadata']['name'].toLowerCase() === file[i]['url'].toLowerCase()) {
+									if (response['result']['name'].toLowerCase() === file[i]['url'].toLowerCase()) {
 										// noinspection JSUnfilteredForInLoop
 										response['mount'] = file[i]['mount'];
 										break;
@@ -875,7 +879,7 @@
 								int = null;
 
 								// noinspection JSUnresolvedFunction
-								fs.extractAll([{url: files[0]['link'], mountPoint: '/' + files[0]['mount']}, {url: files[1]['link'], mountPoint: '/' + files[1]['mount']}]).then(function() {
+								fs.extractAll([{url: URL.createObjectURL(files[0]['fileBlob']), mountPoint: '/' + files[0]['mount']}, {url: URL.createObjectURL(files[1]['fileBlob']), mountPoint: '/' + files[1]['mount']}]).then(function() {
 									started = true;
 									main(args).then(function(ci) {
 										window.ci = ci;

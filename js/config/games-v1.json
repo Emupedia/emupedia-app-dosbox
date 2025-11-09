@@ -297,7 +297,6 @@
 			"id": "rockford",
 			"name": "Rockford: The Arcade Game (EGA)",
 			"executable": "./ROCKFORD.EXE",
-			"args": [],
 			"sync": false,
 			"file": "rockford.zip",
 			"size": 170613,
@@ -327,7 +326,6 @@
 			"id": "supaplex",
 			"name": "Supaplex (VGA) (Boulder Dash Clone)",
 			"executable": "./SUPAPLEX.EXE",
-			"args": [],
 			"sync": false,
 			"file": "supaplex.zip",
 			"size": 276476,
@@ -360,7 +358,6 @@
 			"id": "robbo",
 			"name": "The Adventures of Robbo (VGA) (Boulder Dash Clone)",
 			"executable": "./ROBBO.EXE",
-			"args": [],
 			"sync": false,
 			"file": "robbo.zip",
 			"size": 2004224,
@@ -776,7 +773,6 @@
 			"id": "diggervga",
 			"name": "Digger (VGA) (Retail)",
 			"executable": "./DIGGER3.COM",
-			"args": [],
 			"year": 1986,
 			"license": "Commercial",
 			"status": "Playable"
@@ -785,7 +781,6 @@
 			"name": "Digger (Demo) (VGA)",
 			"notes": "DOSBOX: Intro message corrupted",
 			"executable": "./DIGGER.EXE",
-			"args": [],
 			"year": 1986,
 			"license": "Shareware",
 			"status": "Playable"
@@ -793,7 +788,6 @@
 			"id": "diggerre",
 			"name": "Digger Remastered (VGA)",
 			"executable": "./DIGGERRE.EXE",
-			"args": [],
 			"year": 2001,
 			"license": "Freeware",
 			"status": "Playable",
@@ -809,9 +803,16 @@
 		"notes": "DOSBOX: Hangs after intro movie",
 		"executable": "boot -l c",
 		"args": ["-c", "imgmount c a:\\WIN95.IMG -size 512,63,16,142", "-c", "imgmount d b:\\DIABLO.IMG -size 512,63,16,132"],
-		"mode": "wasm",
+		"mode": "asm",
 		"sync": true,
-		"files": ["win95.zip", "diablo1sw.zip"],
+		"old": true,
+		"files": [{
+			"file": "win95.zip",
+			"mount": "a"
+		} , {
+			"file": "diablo1sw.zip",
+			"mount": "b"
+		}],
 		"size": 51095535,
 		"hardware": {
 			"input": ["Keyboard", "Mouse"],
@@ -1620,7 +1621,6 @@
 			"id": "lem2demo",
 			"name": "Lemmings 2: The Tribes (Demo)",
 			"executable": "./L2.EXE",
-			"args": [],
 			"sync": false,
 			"file": "lem2demo.zip",
 			"size": 474714,
@@ -1636,7 +1636,6 @@
 			"id": "lemm3chr",
 			"name": "Lemmings 3: The Lemmings Chronicles",
 			"executable": "./L3F.EXE",
-			"args": [],
 			"sync": false,
 			"file": "lemm3chr.zip",
 			"size": 4774747,
@@ -2162,7 +2161,6 @@
 			"id": "mspacman",
 			"name": "Ms. Pac-Man (PC Booter)",
 			"executable": "./MSPACMAN.COM",
-			"args": [],
 			"file": "mspacman.zip",
 			"size": 17690,
 			"year": 1984,
@@ -2227,7 +2225,6 @@
 			"name": "Paku Paku (Pac-Man Clone)",
 			"executable": "./PAKU.EXE",
 			"sync": false,
-			"args": [],
 			"file": "pakupaku16.zip",
 			"size": 71507,
 			"hardware": {
@@ -2261,7 +2258,6 @@
 			"name": "CD-Man (v2.0) (Retail) (Pac-Man Clone)",
 			"executable": "./CDMAN2.EXE",
 			"sync": false,
-			"args": [],
 			"file": "cd-man2.zip",
 			"size": 465385,
 			"hardware": {
@@ -2295,7 +2291,6 @@
 			"name": "CD-Man (Beta Unfinished) (Pac-Man Clone)",
 			"executable": "./CD-MAN.EXE",
 			"sync": false,
-			"args": [],
 			"file": "cd-man1.zip",
 			"size": 212277,
 			"hardware": {
@@ -2412,7 +2407,6 @@
 			"id": "pcbert",
 			"name": "PC*bert (Q*bert Clone)",
 			"executable": "./PCBERT.EXE",
-			"args": [],
 			"file": "pcbert.zip",
 			"size": 688139,
 			"hardware": {
@@ -3336,10 +3330,52 @@
 			"screenshots": ["https://www.mobygames.com/images/shots/l/105965-warcraft-ii-beyond-the-dark-portal-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/105670-warcraft-ii-beyond-the-dark-portal-dos-screenshot-mushrooms.gif"]
 		}]
 	} , {
+		"id": "jezzball",
+		"group": "Jezz Ball",
+		"name": "Jezz Ball",
+		"executable": "d:\\runapp JEZZBALL.EXE",
+		"files": [{
+			"file": "win31.zip",
+			"mount": "d"
+		} , {
+			"file": "jezzball.zip",
+			"mount": "c"
+		}],
+		"size": 49588,
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1992,
+		"genre": "Action Puzzle",
+		"developer": "Dima Pavlovsky",
+		"publisher": "Microsoft",
+		"copyright": "Microsoft",
+		"license": "Commercial",
+		"status": "Working",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/JezzBall"
+		},
+		"screenshots": ["https://cdn.mobygames.com/screenshots/15790913-jezzball-windows-16-bit-trimming-away-a-room-segment.png", "https://cdn.mobygames.com/screenshots/15790886-jezzball-windows-16-bit-about.png"],
+		"clones": []
+	} , {
 		"id": "win95",
 		"group": "Windows",
 		"name": "Windows 95 (Retail)",
 		"executable": "boot WIN95.IMG",
+		"mode": "asm",
+		"sync": true,
+		"old": true,
 		"args": ["-c", "imgmount a c:\\WIN95.IMG -size 512,63,16,142"],
 		"file": "win95.zip",
 		"size": 27806506,
