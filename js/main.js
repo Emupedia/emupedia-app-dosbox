@@ -404,6 +404,7 @@
 			function render_preview(screenshots) {
 				var html = '<ul class="lightslider">';
 
+				// noinspection DuplicatedCode
 				var width = solve_aspect_ratio(undefined, $preview.height(), 8, 5);
 				var height = solve_aspect_ratio($preview.width(), undefined, 8, 5);
 
@@ -532,7 +533,7 @@
 								}
 							}
 						});
-						// noinspection JSUnresolvedVariable
+						// noinspection JSUnresolvedVariable,DuplicatedCode
 						$.fn.dataTable.render.ellipsis = function (cutoff, wordbreak, escapeHtml) {
 							var esc = function (t) {
 								return t
@@ -545,6 +546,7 @@
 							// noinspection JSUnusedLocalSymbols
 							return function (d, type, row) {
 								// Order, search and type get the original data
+								// noinspection DuplicatedCode
 								if (type !== 'display') {
 									return d;
 								}
@@ -559,11 +561,12 @@
 									return d;
 								}
 
+								// noinspection JSDeprecatedSymbols
 								var shortened = d.substr(0, cutoff - 1);
 
 								// Find the last white space character in the string
 								if (wordbreak) {
-									shortened = shortened.replace(/\s([^\s]*)$/, '');
+									shortened = shortened.replace(/\s(\S*)$/, '');
 								}
 
 								// Protect against uncontrolled HTML input
@@ -800,6 +803,9 @@
 
 									return filename;
 								}),
+								DosBoxLoader.nativeResolution(640, 480),
+								DosBoxLoader.aspectRatio(640 / 480),
+								DosBoxLoader.scale(1),
 								DosBoxLoader.mountZip(get_file_order(0, file, files).mount, DosBoxLoader.fetchFile('OS File', URL.createObjectURL(get_file_order(0, file, files).blob))),
 								DosBoxLoader.mountZip(get_file_order(1, file, files).mount, DosBoxLoader.fetchFile('Game File', URL.createObjectURL(get_file_order(1, file, files).blob))),
 								DosBoxLoader.extraArgs(args),
@@ -832,6 +838,9 @@
 
 									return filename;
 								}),
+								DosBoxLoader.nativeResolution(640, 480),
+								DosBoxLoader.aspectRatio(640 / 480),
+								DosBoxLoader.scale(1),
 								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.result.fileBlob))),
 								DosBoxLoader.extraArgs(args),
 								DosBoxLoader.startExe(executable)));
@@ -1010,6 +1019,7 @@
 						// noinspection JSUnresolvedFunction
 						$options_dropdown.find('option[data-game-id="' + first + '"]').prop('selected', true).attr('selected', true).trigger('change');
 
+						// noinspection DuplicatedCode
 						var file = typeof selgame['file'] !== 'undefined' ? selgame['file'] : '';
 						var args = typeof selgame['args'] !== 'undefined' ? selgame['args'] : [];
 						var executable = typeof selgame['executable'] !== 'undefined' ? selgame['executable'] : '';
@@ -1164,6 +1174,7 @@
 						}
 
 						var id = typeof selgame['id'] !== 'undefined' ? selgame['id'] : '';
+						// noinspection DuplicatedCode
 						var file = typeof selgame['file'] !== 'undefined' ? selgame['file'] : '';
 						var args = typeof selgame['args'] !== 'undefined' ? selgame['args'] : [];
 						var executable = typeof selgame['executable'] !== 'undefined' ? selgame['executable'] : '';
@@ -1490,25 +1501,36 @@
 						'max-height': $window.height() - 57
 					});
 
-					var width = solve_aspect_ratio(undefined, $preview.height(), 8, 5);
-					var height = solve_aspect_ratio($preview.width(), undefined, 8, 5);
+					// noinspection DuplicatedCode
+					var previewWidth = solve_aspect_ratio(undefined, $preview.height(), 8, 5);
+					var previewHeight = solve_aspect_ratio($preview.width(), undefined, 8, 5);
 
-					if (width > $preview.width()) {
-						width = $preview.width();
+					if (previewWidth > $preview.width()) {
+						previewWidth = $preview.width();
 					}
 
-					if (height > $preview.height()) {
-						height = $preview.height();
+					if (previewHeight > $preview.height()) {
+						previewHeight = $preview.height();
+					}
+
+					var canvasWidth = solve_aspect_ratio(undefined, $canvas.height(), 4, 3);
+
+					if (canvasWidth > $canvas.width()) {
+						canvasWidth = $canvas.width();
 					}
 
 					// noinspection JSUnresolvedFunction
 					if ($body.hasClass('v2')) {
-						$body.find('.dosbox-container').width(width).height(height);
+						$body.find('.dosbox-container').width(previewWidth).height(previewHeight);
 					} else {
-						$canvas.width(width).height(height);
+						if (window.innerWidth <= canvasWidth) {
+							$canvas.width('100%').height('auto');
+						} else {
+							$canvas.width('auto').height('100%');
+						}
 					}
 
-					$preview.find('img').width(width).height(height);
+					$preview.find('img').width(previewWidth).height(previewHeight);
 
 					if (lightslider) {
 						if (typeof lightslider.refresh === 'function') {
