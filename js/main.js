@@ -468,10 +468,7 @@
 							$preview.html('').html(render_preview(screenshots)).show();
 						} else {
 							// noinspection JSUnresolvedFunction
-							$preview.css({
-								'background-image': 'url(' + screenshot + ')',
-								'background-size': 'contain'
-							}).show();
+							$preview.css({ 'background-image': 'url(' + screenshot + ')', 'background-size': 'contain' }).show();
 						}
 					}
 
@@ -597,10 +594,7 @@
 							$list_dropdown_v2.select2('destroy');
 							$options_dropdown.select2('destroy');
 						} else {
-							$version_dropdown.select2({
-								width: 'element',
-								minimumResultsForSearch: -1
-							}).on('select2:open', function() {
+							$version_dropdown.select2({ width: 'element', minimumResultsForSearch: -1 }).on('select2:open', function() {
 								if (typeof PerfectScrollbar !== 'undefined') {
 									perfect_scrollbar = new PerfectScrollbar('.select2-results__options', {});
 
@@ -622,9 +616,7 @@
 								}
 							});
 
-							$list_dropdown_v2.select2({
-								width: 'element'
-							}).on('select2:open', function() {
+							$list_dropdown_v2.select2({ width: 'element' }).on('select2:open', function() {
 								// noinspection JSUnresolvedFunction
 								$window.trigger('resize');
 
@@ -661,9 +653,7 @@
 								}
 							});
 
-							$options_dropdown.select2({
-								width: 'element'
-							}).on('select2:open', function() {
+							$options_dropdown.select2({ width: 'element' }).on('select2:open', function() {
 								if (typeof PerfectScrollbar !== 'undefined') {
 									perfect_scrollbar = new PerfectScrollbar('.select2-results__options', {});
 
@@ -702,10 +692,7 @@
 							$preview.html('').html(render_preview(games_v1['games'][0]['screenshots'])).show();
 						} else {
 							// noinspection JSUnresolvedFunction
-							$preview.css({
-								'background-image': 'url(' + games_v1['games'][0]['screenshots'][0] + ')',
-								'background-size': 'contain'
-							}).show();
+							$preview.css({ 'background-image': 'url(' + games_v1['games'][0]['screenshots'][0] + ')', 'background-size': 'contain' }).show();
 						}
 					}
 
@@ -742,7 +729,7 @@
 				}
 			}
 
-			function start_v1(file, executable, args, mode, sync, old) {
+			function start_v1(name, file, executable, args, mode, sync, old) {
 				if (typeof sync !== 'undefined') {
 					if (sync === true) {
 						sync = '';
@@ -768,7 +755,7 @@
 
 					for (var f in file) {
 						// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-						dbx.filesDownload({path: '/dosbox/' + file[f]['file']}).then(function(response) {
+						dbx.filesDownload({ path: '/dosbox/' + file[f]['file'] }).then(function(response) {
 							console.log(response);
 							// noinspection JSUnfilteredForInLoop,JSReferencingMutableVariableFromClosure
 							files.push(response);
@@ -785,13 +772,13 @@
 							int = null;
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 							var emulator = new Emulator($canvas.get(0), function() {
-								started = true;
-								setTimeout(function() {
-									// noinspection JSUnresolvedFunction
-									$window.trigger('resize');
-								}, 2500);
-							},
-							new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
+									started = true;
+									setTimeout(function() {
+										// noinspection JSUnresolvedFunction
+										$window.trigger('resize');
+									}, 5000);
+								},
+								new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
 								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
 									if (filename === 'dosbox.html.mem') {
 										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
@@ -803,6 +790,7 @@
 
 									return filename;
 								}),
+								DosBoxLoader.fileSystemKey(name),
 								DosBoxLoader.nativeResolution(640, 480),
 								DosBoxLoader.aspectRatio(640 / 480),
 								DosBoxLoader.scale(1),
@@ -811,12 +799,12 @@
 								DosBoxLoader.extraArgs(args),
 								DosBoxLoader.startExe(executable))
 							);
-							emulator.start({waitAfterDownloading: false});
+							emulator.start({ waitAfterDownloading: false });
 						}
 					}, 100);
 				} else {
 					// noinspection JSUnresolvedFunction
-					dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
+					dbx.filesDownload({ path: '/dosbox/' + file }).then(function(response) {
 						console.log(response);
 						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
 						var emulator = new Emulator($canvas.get(0), function() {
@@ -824,27 +812,29 @@
 								setTimeout(function() {
 									// noinspection JSUnresolvedFunction
 									$window.trigger('resize');
-								}, 2500);
+								}, 5000);
 							},
 							new DosBoxLoader(DosBoxLoader.emulatorJS($sys.feature.WEBASSEMBLY && mode !== 'asm' ? 'js/dosbox-' + sync + 'sync-wasm.js' : ($sys.feature.ASMJS ? 'js/dosbox-' + sync + 'sync' + old + '-asm.js' : alert('DOSBox cannot work because WebAssembly and/or ASM.JS is not supported in your browser!'))),
-								DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
-									if (filename === 'dosbox.html.mem') {
-										return 'js/dosbox-' + sync + 'sync' + old + '.mem';
-									}
+							DosBoxLoader.locateAdditionalEmulatorJS(function(filename) {
+								if (filename === 'dosbox.html.mem') {
+									return 'js/dosbox-' + sync + 'sync' + old + '.mem';
+								}
 
-									if (filename === 'dosbox.wasm') {
-										return 'js/dosbox-' + sync + 'sync.wasm';
-									}
+								if (filename === 'dosbox.wasm') {
+									return 'js/dosbox-' + sync + 'sync.wasm';
+								}
 
-									return filename;
-								}),
-								DosBoxLoader.nativeResolution(640, 480),
-								DosBoxLoader.aspectRatio(640 / 480),
-								DosBoxLoader.scale(1),
-								DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.result.fileBlob))),
-								DosBoxLoader.extraArgs(args),
-								DosBoxLoader.startExe(executable)));
-						emulator.start({waitAfterDownloading: false});
+								return filename;
+							}),
+							DosBoxLoader.fileSystemKey(name),
+							DosBoxLoader.nativeResolution(640, 480),
+							DosBoxLoader.aspectRatio(640 / 480),
+							DosBoxLoader.scale(1),
+							DosBoxLoader.mountZip('c', DosBoxLoader.fetchFile('Game File', URL.createObjectURL(response.result.fileBlob))),
+							DosBoxLoader.extraArgs(args),
+							DosBoxLoader.startExe(executable))
+						);
+						emulator.start({ waitAfterDownloading: false });
 					}).catch(function(error) {
 						console.log(error);
 					});
@@ -863,7 +853,7 @@
 
 						for (var f in file) {
 							// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-							dbx.filesDownload({path: '/dosbox/' + file[f]['url']}).then(function(response) {
+							dbx.filesDownload({ path: '/dosbox/' + file[f]['url'] }).then(function(response) {
 								console.log(response);
 								for (var i in file) {
 									// noinspection JSUnfilteredForInLoop
@@ -898,7 +888,7 @@
 						}, 100);
 					} else {
 						// noinspection JSUnresolvedFunction
-						dbx.filesDownload({path: '/dosbox/' + file}).then(function(response) {
+						dbx.filesDownload({ path: '/dosbox/' + file }).then(function(response) {
 							console.log(response);
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
 							fs.extract(URL.createObjectURL(response.result.fileBlob)).then(function() {
@@ -913,7 +903,7 @@
 			}
 
 			// noinspection JSUnresolvedFunction
-			dbx = new dropbox.Dropbox({accessToken: window['DROPBOX_TOKEN'], fetch: fetch.fetch});
+			dbx = new dropbox.Dropbox({ accessToken: window['DROPBOX_TOKEN'], fetch: fetch.fetch });
 
 			$document			= $(document);
 			$window				= $(window);
@@ -1042,7 +1032,7 @@
 							// noinspection JSUnfilteredForInLoop,DuplicatedCode
 							if (games_v1['games'][game]['id'] === game_selected) {
 								// noinspection JSUnfilteredForInLoop,DuplicatedCode
-								start_v1(typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
+								start_v1(games_v1['games'][game]['id'], typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
 								break;
 							} else {
 								// noinspection JSUnfilteredForInLoop
@@ -1052,7 +1042,7 @@
 										// noinspection JSUnfilteredForInLoop,DuplicatedCode
 										if (games_v1['games'][game]['clones'][clone]['id'] === game_selected) {
 											// noinspection JSUnfilteredForInLoop,DuplicatedCode
-											start_v1((typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
+											start_v1(games_v1['games'][game]['id'], (typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
 											break;
 										}
 									}
@@ -1089,7 +1079,7 @@
 									// noinspection JSUnresolvedFunction
 									$start.hide();
 									// noinspection JSUnfilteredForInLoop,DuplicatedCode
-									start_v1(typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
+									start_v1(games_v1['games'][game]['id'], typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
 									break;
 								} else {
 									// noinspection JSUnfilteredForInLoop,DuplicatedCode
@@ -1105,7 +1095,7 @@
 												// noinspection JSUnresolvedFunction
 												$start.hide();
 												// noinspection JSUnfilteredForInLoop,DuplicatedCode
-												start_v1((typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
+												start_v1(games_v1['games'][game]['id'], (typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
 												break;
 											}
 										}
@@ -1220,7 +1210,7 @@
 								// noinspection JSUnfilteredForInLoop,DuplicatedCode
 								if (games_v1['games'][game]['id'] === game_selected) {
 									// noinspection JSUnfilteredForInLoop,DuplicatedCode
-									start_v1(typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
+									start_v1(games_v1['games'][game]['id'], typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file'], games_v1['games'][game]['executable'], games_v1['games'][game]['args'], games_v1['games'][game]['mode'], games_v1['games'][game]['sync'], games_v1['games'][game]['old']);
 									break;
 								} else {
 									// noinspection JSUnfilteredForInLoop,DuplicatedCode
@@ -1230,7 +1220,7 @@
 											// noinspection JSUnfilteredForInLoop,DuplicatedCode
 											if (games_v1['games'][game]['clones'][clone]['id'] === game_selected) {
 												// noinspection JSUnfilteredForInLoop,DuplicatedCode
-												start_v1((typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
+												start_v1(games_v1['games'][game]['id'], (typeof games_v1['games'][game]['clones'][clone]['files'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['files'] : (typeof games_v1['games'][game]['clones'][clone]['file'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['file'] : (typeof games_v1['games'][game]['files'] !== 'undefined' ? games_v1['games'][game]['files'] : games_v1['games'][game]['file']))), (typeof games_v1['games'][game]['clones'][clone]['executable'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['executable'] : games_v1['games'][game]['executable']), (typeof games_v1['games'][game]['clones'][clone]['args'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['args'] : games_v1['games'][game]['args']), games_v1['games'][game]['clones'][clone]['mode'], (typeof games_v1['games'][game]['clones'][clone]['sync'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['sync'] : games_v1['games'][game]['sync']), (typeof games_v1['games'][game]['clones'][clone]['old'] !== 'undefined' ? games_v1['games'][game]['clones'][clone]['old'] : games_v1['games'][game]['old']));
 											}
 										}
 									}
@@ -1294,10 +1284,7 @@
 								$preview.html('').html(render_preview(screenshots)).show();
 							} else {
 								// noinspection JSUnresolvedFunction
-								$preview.css({
-									'background-image': 'url(' + screenshot + ')',
-									'background-size': 'contain'
-								}).show();
+								$preview.css({ 'background-image': 'url(' + screenshot + ')', 'background-size': 'contain' }).show();
 							}
 						} else {
 							// noinspection JSUnresolvedFunction
@@ -1320,10 +1307,7 @@
 												$preview.html('').html(render_preview(games_v1['games'][game]['screenshots'])).show();
 											} else {
 												// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-												$preview.css({
-													'background-image': 'url(' + (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '') + ')',
-													'background-size': 'contain'
-												}).show();
+												$preview.css({ 'background-image': 'url(' + (typeof games_v1['games'][game]['screenshots'][0] !== 'undefined' ? games_v1['games'][game]['screenshots'][0] : '') + ')', 'background-size': 'contain' }).show();
 											}
 										} else {
 											// noinspection JSUnresolvedFunction
@@ -1365,10 +1349,7 @@
 															}
 														} else {
 															// noinspection JSUnfilteredForInLoop,JSUnresolvedFunction
-															$preview.css({
-																'background-image': 'url(' + screenshot + ')',
-																'background-size': 'contain'
-															}).show();
+															$preview.css({ 'background-image': 'url(' + screenshot + ')', 'background-size': 'contain' }).show();
 														}
 													} else {
 														// noinspection JSUnresolvedFunction
@@ -1481,10 +1462,7 @@
 							});
 						} else {
 							// noinspection JSUnresolvedFunction
-							$preview.css({
-								'background-image': 'url(' + screenshots[0] + ')',
-								'background-size': 'contain'
-							}).show();
+							$preview.css({ 'background-image': 'url(' + screenshots[0] + ')', 'background-size': 'contain' }).show();
 						}
 					}
 				});
@@ -1497,9 +1475,7 @@
 				// noinspection JSUnresolvedFunction,DuplicatedCode
 				$window.off('resize').on('resize', function() {
 					// noinspection JSUnresolvedFunction
-					$body.find('.select2-container--bootstrap4 .select2-results > .select2-results__options').css({
-						'max-height': $window.height() - 57
-					});
+					$body.find('.select2-container--bootstrap4 .select2-results > .select2-results__options').css({ 'max-height': $window.height() - 57 });
 
 					// noinspection DuplicatedCode
 					var previewWidth = solve_aspect_ratio(undefined, $preview.height(), 8, 5);
