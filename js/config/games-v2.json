@@ -47,6 +47,54 @@
 				}]
 			}]
 		} , {
+			"id": "actionpuzzle",
+			"name": "Action Puzzle",
+			"games": [{
+				"id": "jezzball",
+				"name": "JezzBall",
+				"hardware": {
+					"input": ["Keyboard", "Mouse"],
+					"video": {
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": ["320x200"],
+							"colors": 256
+						}
+					},
+					"sound": ["PC Speaker", "Sound Blaster"]
+				},
+				"language": "English",
+				"year": 1992,
+				"developer": "Dima Pavlovsky",
+				"publisher": "Microsoft",
+				"copyright": "Microsoft",
+				"links": {
+					"wikipedia": "https://en.wikipedia.org/wiki/JezzBall"
+				},
+				"screenshots": ["https://cdn.mobygames.com/screenshots/15790913-jezzball-windows-16-bit-trimming-away-a-room-segment.png", "https://cdn.mobygames.com/screenshots/15790886-jezzball-windows-16-bit-about.png"],
+				"versions": [{
+					"id": "jezzball",
+					"name": "JezzBall",
+					"file": [{
+						"url": "win31.zip",
+						"mountdrive": "d"
+					}, {
+						"url": "jezzball.zip",
+						"mountfolder": "/"
+					}],
+					"size": 49588,
+					"executable": "d:\\runapp JEZZBALL.EXE",
+					"mode": "asm",
+					"sync": true,
+					"license": "Commercial",
+					"status": "Working",
+					"links": {
+						"wikipedia": "https://en.wikipedia.org/wiki/JezzBall"
+					},
+					"screenshots": ["https://cdn.mobygames.com/screenshots/15790913-jezzball-windows-16-bit-trimming-away-a-room-segment.png", "https://cdn.mobygames.com/screenshots/15790886-jezzball-windows-16-bit-about.png"]
+				}]
+			}]
+		} , {
 			"id": "adventure",
 			"name": "Adventure",
 			"games": [{
@@ -3260,10 +3308,10 @@
 					"name": "Diablo I",
 					"file": [{
 						"url": "win95.zip",
-						"mount": "WIN95"
+						"mountfolder": "WIN95"
 					} , {
 						"url": "diablo1sw.zip",
-						"mount": "DIABLO"
+						"mountfolder": "DIABLO"
 					}],
 					"size": 51095535,
 					"executable": "boot c:\\WIN95\\WIN95.IMG",

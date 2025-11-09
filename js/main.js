@@ -936,25 +936,92 @@
 							var filePath = '/dosbox/' + file[f]['url'];
 							var fileName = file[f]['url'];
 							var progressId = 'v2_' + f + '_' + Date.now();
-							var mountPoint = file[f]['mount'];
+							// Support both mountdrive and mountfolder (v2) as well as legacy mount (v1)
+							var mountDrive = file[f]['mountdrive'];
+							var mountFolder = file[f]['mountfolder'];
+							var mountLegacy = file[f]['mount'];
 							
 							// noinspection JSUnfilteredForInLoop
-							(function(mount) {
+							(function(drive, folder, legacy, index) {
 								downloadPromises.push(
 									downloadFileWithCache(filePath, fileName, progressId).then(function(response) {
-										response['mount'] = mount;
+										response['mountdrive'] = drive;
+										response['mountfolder'] = folder;
+										response['mount'] = legacy;
+										response['index'] = index;
 										return response;
 									})
 								);
-							})(mountPoint);
+							})(mountDrive, mountFolder, mountLegacy, f);
 						}
 
 						Promise.all(downloadPromises).then(function(files) {
+							// Build extractAll array and prepare drive mount commands
+							var extractArray = [];
+							var driveCommands = [];
+							
+							// Helper function to generate a simple hash for a string
+							function simpleHash(str, length) {
+								var hash = 0;
+								for (var j = 0; j < str.length; j++) {
+									hash = ((hash << 5) - hash) + str.charCodeAt(j);
+									hash = hash & hash; // Convert to 32bit integer
+								}
+								return Math.abs(hash).toString(36).substring(0, length); // Base36
+							}
+							
+							for (var i = 0; i < files.length; i++) {
+								var mountPoint;
+								
+								// Handle mountdrive: extract to a temp folder, then mount as drive
+								if (files[i]['mountdrive']) {
+									// Extract to a DOS-compatible folder name (8.3 format)
+									var driveLetter = files[i]['mountdrive'].toUpperCase();
+									// Generate a unique folder name based on file URL to avoid collisions
+									// Extract filename without extension
+									var fileName = file[i]['url'].split('/').pop().split('.')[0];
+									// Use as much of the original name as possible (up to 6 chars for name)
+									var filePrefix = fileName.substring(0, 6).toLowerCase();
+									// Add drive letter as part of name (total 7-8 chars for name part)
+									var folderName = filePrefix + '_' + driveLetter.toLowerCase();
+									// Use 3-char hash as extension for maximum uniqueness (46,656 combinations)
+									var hashExt = simpleHash(file[i]['url'], 3);
+									// Use format: /XXXXXX_Y.HHH where XXXXXX is filename (up to 6 chars), Y is drive, HHH is hash (3 chars)
+									// Total: 8.3 format (DOS compatible)
+									var tempFolder = '/' + folderName + '.' + hashExt;
+									mountPoint = tempFolder;
+									
+									// Add DOSBox MOUNT command to map this folder to a drive letter
+									// This command will be prepended to the args array
+									driveCommands.push('-c');
+									driveCommands.push('mount ' + driveLetter + ' ' + tempFolder);
+								} 
+								// Handle mountfolder: extract to a specific folder path
+								else if (files[i]['mountfolder']) {
+									mountPoint = '/' + files[i]['mountfolder'];
+								} 
+								// Legacy mount support for backwards compatibility
+								else if (files[i]['mount']) {
+									mountPoint = '/' + files[i]['mount'];
+								} 
+								// Default fallback
+								else {
+									mountPoint = '/';
+								}
+								
+								extractArray.push({
+									url: URL.createObjectURL(files[i]['result']['fileBlob']),
+									mountPoint: mountPoint
+								});
+							}
+							
+							// Prepend drive mount commands to args
+							if (driveCommands.length > 0) {
+								args = driveCommands.concat(args);
+							}
+							
 							// noinspection JSUnresolvedFunction
-							fs.extractAll([
-								{url: URL.createObjectURL(files[0]['result']['fileBlob']), mountPoint: '/' + files[0]['mount']}, 
-								{url: URL.createObjectURL(files[1]['result']['fileBlob']), mountPoint: '/' + files[1]['mount']}
-							]).then(function() {
+							fs.extractAll(extractArray).then(function() {
 								started = true;
 								main(args).then(function(ci) {
 									window.ci = ci;
