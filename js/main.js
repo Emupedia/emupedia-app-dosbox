@@ -837,7 +837,7 @@
 						var filePath = '/dosbox/' + file[f]['file'];
 						var fileName = file[f]['file'];
 						var progressId = 'v1_' + f + '_' + Date.now();
-						
+
 						// noinspection JSUnfilteredForInLoop
 						downloadPromises.push(
 							downloadFileWithCache(filePath, fileName, progressId)
@@ -883,7 +883,7 @@
 					// noinspection JSUnresolvedFunction
 					var filePath = '/dosbox/' + file;
 					var progressId = 'v1_single_' + Date.now();
-					
+
 					downloadFileWithCache(filePath, file, progressId).then(function(response) {
 						console.log(response);
 						// noinspection JSUnresolvedFunction,JSUnresolvedVariable,AmdModulesDependencies
@@ -940,7 +940,7 @@
 							var mountDrive = file[f]['mountdrive'];
 							var mountFolder = file[f]['mountfolder'];
 							var mountLegacy = file[f]['mount'];
-							
+
 							// noinspection JSUnfilteredForInLoop
 							(function(drive, folder, legacy, index) {
 								downloadPromises.push(
@@ -959,7 +959,7 @@
 							// Build extractAll array and prepare drive mount commands
 							var extractArray = [];
 							var driveCommands = [];
-							
+
 							// Helper function to generate a simple hash for a string
 							function simpleHash(str, length) {
 								var hash = 0;
@@ -969,10 +969,10 @@
 								}
 								return Math.abs(hash).toString(36).substring(0, length); // Base36
 							}
-							
+
 							for (var i = 0; i < files.length; i++) {
 								var mountPoint;
-								
+
 								// Handle mountdrive: extract to a temp folder, then mount as drive
 								if (files[i]['mountdrive']) {
 									// Extract to a DOS-compatible folder name (8.3 format)
@@ -990,36 +990,36 @@
 									// Total: 8.3 format (DOS compatible)
 									var tempFolder = '/' + folderName + '.' + hashExt;
 									mountPoint = tempFolder;
-									
+
 									// Add DOSBox MOUNT command to map this folder to a drive letter
 									// This command will be prepended to the args array
 									driveCommands.push('-c');
 									driveCommands.push('mount ' + driveLetter + ' ' + tempFolder);
-								} 
+								}
 								// Handle mountfolder: extract to a specific folder path
 								else if (files[i]['mountfolder']) {
 									mountPoint = '/' + files[i]['mountfolder'];
-								} 
+								}
 								// Legacy mount support for backwards compatibility
 								else if (files[i]['mount']) {
 									mountPoint = '/' + files[i]['mount'];
-								} 
+								}
 								// Default fallback
 								else {
 									mountPoint = '/';
 								}
-								
+
 								extractArray.push({
 									url: URL.createObjectURL(files[i]['result']['fileBlob']),
 									mountPoint: mountPoint
 								});
 							}
-							
+
 							// Prepend drive mount commands to args
 							if (driveCommands.length > 0) {
 								args = driveCommands.concat(args);
 							}
-							
+
 							// noinspection JSUnresolvedFunction
 							fs.extractAll(extractArray).then(function() {
 								started = true;
@@ -1034,7 +1034,7 @@
 						// noinspection JSUnresolvedFunction
 						var filePath = '/dosbox/' + file;
 						var progressId = 'v2_single_' + Date.now();
-						
+
 						downloadFileWithCache(filePath, file, progressId).then(function(response) {
 							console.log(response);
 							// noinspection JSUnresolvedFunction,JSUnresolvedVariable
@@ -1071,7 +1071,7 @@
 			if (typeof CacheManager !== 'undefined' && typeof ProgressManager !== 'undefined') {
 				cacheManager = new CacheManager();
 				progressManager = new ProgressManager();
-				
+
 				cacheManager.init().then(function() {
 					console.log('Cache manager initialized successfully');
 				}).catch(function(error) {
@@ -1680,15 +1680,10 @@
 						canvasWidth = $canvas.width();
 					}
 
-					// noinspection JSUnresolvedFunction
-					if ($body.hasClass('v2')) {
-						$body.find('.dosbox-container').width(previewWidth).height(previewHeight);
+					if (window.innerWidth <= canvasWidth) {
+						$canvas.width('100%').height('auto');
 					} else {
-						if (window.innerWidth <= canvasWidth) {
-							$canvas.width('100%').height('auto');
-						} else {
-							$canvas.width('auto').height('100%');
-						}
+						$canvas.width('auto').height('100%');
 					}
 
 					$preview.find('img').width(previewWidth).height(previewHeight);
