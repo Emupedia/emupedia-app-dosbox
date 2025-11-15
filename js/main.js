@@ -1025,6 +1025,10 @@
 								started = true;
 								main(args).then(function(ci) {
 									window.ci = ci;
+									setTimeout(function() {
+										// noinspection JSUnresolvedFunction
+										$window.trigger('resize');
+									}, 5000);
 								});
 							});
 						}).catch(function(error) {
@@ -1042,6 +1046,10 @@
 								started = true;
 								main(args).then(function(ci) {
 									window.ci = ci;
+									setTimeout(function() {
+										// noinspection JSUnresolvedFunction
+										$window.trigger('resize');
+									}, 5000);
 								});
 							});
 						}).catch(function(error) {
@@ -1434,7 +1442,6 @@
 					} else {
 						if (Module) {
 							Module.requestFullscreen(true, false);
-							started = true;
 						}
 					}
 				});
