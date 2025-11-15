@@ -3375,6 +3375,86 @@
 						"https://www.mobygames.com/images/shots/l/305889-the-elder-scrolls-arena-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/39284-the-elder-scrolls-arena-dos-screenshot-outside-of-a-temple.jpg"
 					]
 				}]
+			} , {
+				"id": "castle1",
+				"name": "Castle of the Winds",
+				"hardware": {
+					"input": [
+						"Keyboard", "Mouse"
+					],
+					"video": {
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": [
+								"320x200"
+							],
+							"colors": 256
+						}
+					},
+					"sound": [
+						"PC Speaker", "Sound Blaster"
+					]
+				},
+				"language": "English",
+				"year": 1993,
+				"developer": "SaadaSoft",
+				"publisher": "Epic MegaGames, Inc.",
+				"copyright": "SaadaSoft",
+				"links": {
+					"wikipedia": "https://en.wikipedia.org/wiki/Castle_of_the_Winds",
+					"youtube": "https://www.youtube.com/watch?v=JzfGT6JWVOg"
+				},
+				"screenshots": [
+					"https://cdn.mobygames.com/screenshots/9612961-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg", "https://cdn.mobygames.com/screenshots/4572674-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg"
+				],
+				"versions": [{
+					"id": "castle1",
+					"name": "Castle of the Winds: A Question of Vengeance (Part One) (Shareware)",
+					"file": [{
+						"url": "win31.zip",
+						"mountdrive": "d"
+					}, {
+						"url": "castle1.zip",
+						"mountfolder": "/"
+					}],
+					"size": 307404,
+					"executable": "d:\\runapp CASTLE1.EXE",
+					"mode": "asm",
+					"sync": true,
+					"version": "1.1a",
+					"license": "Shareware",
+					"status": "Playable",
+					"links": {
+						"wikipedia": "https://en.wikipedia.org/wiki/Castle_of_the_Winds",
+						"youtube": "https://www.youtube.com/watch?v=JzfGT6JWVOg"
+					},
+					"screenshots": [
+						"https://cdn.mobygames.com/screenshots/9612961-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg", "https://cdn.mobygames.com/screenshots/4572674-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg"
+					]
+				}, {
+					"id": "castle2",
+					"name": "Castle of the Winds: Lifthransir's Bane (Part Two) (Retail)",
+					"file": [{
+						"url": "win31.zip",
+						"mountdrive": "d"
+					}, {
+						"url": "castle2.zip",
+						"mountfolder": "/"
+					}],
+					"size": 348947,
+					"executable": "d:\\runapp CASTLE2.EXE",
+					"mode": "asm",
+					"sync": true,
+					"license": "Commercial",
+					"status": "Playable",
+					"links": {
+						"wikipedia": "https://en.wikipedia.org/wiki/Castle_of_the_Winds",
+						"youtube": "https://www.youtube.com/watch?v=JzfGT6JWVOg"
+					},
+					"screenshots": [
+						"https://cdn.mobygames.com/screenshots/16134729-castle-of-the-winds-ii-lifthransirs-bane-windows-16-bit-title-sc.png", "https://cdn.mobygames.com/screenshots/16134093-castle-of-the-winds-ii-lifthransirs-bane-windows-16-bit-hanging-.png"
+					]
+				}]
 			}]
 		} , {
 			"id": "tbs",
