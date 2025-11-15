@@ -524,7 +524,7 @@
 		"year": 1993,
 		"genre": "Role-playing (RPG)",
 		"developer": "SaadaSoft",
-		"publisher": "Manaccom Pty Ltd., Monkey Business, Inc.",
+		"publisher": "Epic MegaGames, Inc.",
 		"copyright": "SaadaSoft",
 		"version": "1.1a",
 		"license": "Shareware",
@@ -537,7 +537,6 @@
 		"clones": [{
 			"id": "castle2",
 			"name": "Castle of the Winds: Lifthransir's Bane (Part Two) (Retail)",
-			"publisher": "Epic MegaGames, Inc.",
 			"executable": "d:\\runapp CASTLE2.EXE",
 			"mode": "asm",
 			"sync": true,
@@ -548,7 +547,8 @@
 				"file": "castle2.zip",
 				"mount": "c"
 			}],
-			"size": 348947
+			"size": 348947,
+			"screenshots": ["https://cdn.mobygames.com/screenshots/16134729-castle-of-the-winds-ii-lifthransirs-bane-windows-16-bit-title-sc.png", "https://cdn.mobygames.com/screenshots/16134093-castle-of-the-winds-ii-lifthransirs-bane-windows-16-bit-hanging-.png"]
 		}]
 	} , {
 		"id": "catalog",

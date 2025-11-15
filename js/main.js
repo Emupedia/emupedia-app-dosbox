@@ -1107,7 +1107,7 @@
 				var index_selected, genre_index_selected, game_index_selected, option_selected, game_id_selected;
 
 				// noinspection JSUnresolvedFunction
-				first = typeof $.url().param('game') !== 'undefined' ? $.url().param('game') : (typeof $.url().param('gamev1') !== 'undefined' ? $.url().param('gamev1') : (typeof $.url().param('gamev2') !== 'undefined' ? $.url().param('gamev2') : false));
+				first = typeof $.url().param('gamev1') !== 'undefined' ? $.url().param('gamev1') : (typeof $.url().param('gamev2') !== 'undefined' ? $.url().param('gamev2') : false);
 
 				// noinspection JSUnresolvedFunction
 				if (typeof $.url().param('gamev2') !== 'undefined') {
@@ -1120,7 +1120,7 @@
 				}
 
 				// noinspection JSUnresolvedFunction
-				if (typeof $.url().param('game') !== 'undefined' || typeof $.url().param('gamev1') !== 'undefined') {
+				if (typeof $.url().param('gamev1') !== 'undefined') {
 					// noinspection JSUnresolvedFunction
 					$body.removeClass('v1 v2').addClass('v1');
 				}
@@ -1206,9 +1206,14 @@
 						// noinspection JSUnresolvedFunction
 						$list_dropdown_v1.find('option').prop('selected', false).removeAttr('selected');
 						// noinspection JSUnresolvedFunction
-						index_selected = parseInt($.url().param('game'), 10) || 0;
-						// noinspection JSUnresolvedFunction
-						var game_selected = typeof $.url().param('gamev1') !== 'undefined' ? $list_dropdown_v1.find('option[data-game-id="'+ $.url().param('gamev1') +'"]').prop('selected', true).attr('selected', true).data('game-id') : $list_dropdown_v1.find('option[value="'+ index_selected +'"]').prop('selected', true).attr('selected', true).data('game-id');
+						var game_selected = null;
+						if (typeof $.url().param('gamev1') !== 'undefined') {
+							var $option = $list_dropdown_v1.find('option[data-game-id="'+ $.url().param('gamev1') +'"]');
+							if ($option.length > 0) {
+								$option.prop('selected', true).attr('selected', true);
+								game_selected = $option.data('game-id');
+							}
+						}
 
 						// noinspection DuplicatedCode
 						for (var game in games_v1['games']) {
@@ -1244,7 +1249,6 @@
 
 					} else {
 						var $el = $(this);
-						var index_selected = parseInt($el.data('index'), 10);
 						var game_selected = $el.data('game-id');
 
 						// noinspection DuplicatedCode
@@ -1286,7 +1290,7 @@
 								}
 							}
 						} else {
-							location.href = location.protocol + '//' + location.host + location.pathname + '?game=' + index_selected;
+							location.href = location.protocol + '//' + location.host + location.pathname + '?gamev1=' + game_selected;
 						}
 					}
 				});
@@ -1376,8 +1380,7 @@
 						}
 					} else {
 						// noinspection JSUnresolvedFunction
-						index_selected = parseInt($list_dropdown_v1.val(), 10);
-						var game_selected = $list_dropdown_v1.find('option[value="' + index_selected + '"]').data('game-id');
+						var game_selected = $list_dropdown_v1.find('option:selected').data('game-id');
 
 						// noinspection DuplicatedCode
 						if (first) {
@@ -1410,7 +1413,7 @@
 								}
 							}
 						} else {
-							location.href = location.protocol + '//' + location.host + location.pathname + '?game=' + index_selected;
+							location.href = location.protocol + '//' + location.host + location.pathname + '?gamev1=' + game_selected;
 						}
 					}
 				});
@@ -1471,8 +1474,7 @@
 							}
 						} else {
 							// noinspection JSUnresolvedFunction
-							index_selected = parseInt($list_dropdown_v1.val(), 10);
-							var game_selected = $list_dropdown_v1.find('option[value="'+ index_selected +'"]').data('game-id');
+							var game_selected = $list_dropdown_v1.find('option:selected').data('game-id');
 
 							// noinspection DuplicatedCode
 							for (var game in games_v1['games']) {
