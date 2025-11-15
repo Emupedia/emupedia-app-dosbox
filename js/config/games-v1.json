@@ -185,6 +185,45 @@
 			"screenshots": ["https://www.mobygames.com/images/shots/l/463593-alley-cat-pc-booter-screenshot-title-screen-pcjr.png", "https://www.mobygames.com/images/shots/l/463594-alley-cat-pc-booter-screenshot-the-cat-is-outside-pcjr.png"]
 		}]
 	} , {
+		"id": "arena",
+		"group": "The Elder Scrolls",
+		"name": "The Elder Scrolls I: Arena (Retail)",
+		"altnames": ["Arena"],
+		"executable": "./A.EXE",
+		"args": ["-c", "cycles=max", "-c", "c:", "-c", "A.EXE -sa:220 -si:5 -sd:1 -ma:220 -mq:5 -md:1 -ssbdig.adv -msbfm.adv"],
+		"file": "arena.zip",
+		"size": 9468383,
+		"drm": ["Manual Lookup"],
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1994,
+		"genre": "Role-Playing Game (RPG)",
+		"subgenre": "Action Role-Playing Game (ARPG)",
+		"developer": "Bethesda Softworks LLC",
+		"publisher": "Bethesda Softworks LLC",
+		"copyright": "Bethesda Softworks LLC",
+		"license": "Commercial",
+		"status": "Slow",
+		"links": {
+			"url": "https://elderscrolls.bethesda.net/en/arena",
+			"wikipedia": "https://en.wikipedia.org/wiki/The_Elder_Scrolls:_Arena",
+			"youtube": "https://www.youtube.com/watch?v=pPmihFz_nmg"
+		},
+		"screenshots": ["https://www.mobygames.com/images/shots/l/305889-the-elder-scrolls-arena-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/39284-the-elder-scrolls-arena-dos-screenshot-outside-of-a-temple.jpg"],
+		"clones": []
+	} , {
 		"id": "avolley",
 		"group": "Arcade Volleyball",
 		"name": "Arcade Volleyball (CGA)",
@@ -452,6 +491,64 @@
 				"youtube": "https://www.youtube.com/watch?v=SygD93F95js"
 			},
 			"screenshots": ["https://www.mobygames.com/images/shots/l/24080-popcorn-dos-screenshot-opening-screen.gif", "https://www.mobygames.com/images/shots/l/15005-popcorn-dos-screenshot.jpg"]
+		}]
+	} , {
+		"id": "castle1",
+		"group": "Castle of the Winds",
+		"name": "Castle of the Winds: A Question of Vengeance (Part One) (Shareware)",
+		"executable": "d:\\runapp CASTLE1.EXE",
+		"mode": "asm",
+		"sync": true,
+		"files": [{
+			"file": "win31.zip",
+			"mount": "d"
+		} , {
+			"file": "castle1.zip",
+			"mount": "c"
+		}],
+		"size": 307404,
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1993,
+		"genre": "Role-playing (RPG)",
+		"developer": "SaadaSoft",
+		"publisher": "Manaccom Pty Ltd., Monkey Business, Inc.",
+		"copyright": "SaadaSoft",
+		"version": "1.1a",
+		"license": "Shareware",
+		"status": "Playable",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/Castle_of_the_Winds",
+			"youtube": "https://www.youtube.com/watch?v=JzfGT6JWVOg"
+		},
+		"screenshots": ["https://cdn.mobygames.com/screenshots/9612961-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg", "https://cdn.mobygames.com/screenshots/4572674-castle-of-the-winds-i-a-question-of-vengeance-windows-16-bit-the.jpg"],
+		"clones": [{
+			"id": "castle2",
+			"name": "Castle of the Winds: Lifthransir's Bane (Part Two) (Retail)",
+			"publisher": "Epic MegaGames, Inc.",
+			"executable": "d:\\runapp CASTLE2.EXE",
+			"mode": "asm",
+			"sync": true,
+			"files": [{
+				"file": "win31.zip",
+				"mount": "d"
+			} , {
+				"file": "castle2.zip",
+				"mount": "c"
+			}],
+			"size": 348947
 		}]
 	} , {
 		"id": "catalog",
@@ -807,7 +904,7 @@
 		"id": "diablo1sw",
 		"group": "Diablo",
 		"name": "Diablo I",
-		"notes": "DOSBOX: Hangs after intro movie",
+		"notes": "DOSBOX: Hangs and doesn't starts",
 		"executable": "boot -l c",
 		"args": ["-c", "imgmount c a:\\WIN95.IMG -size 512,63,16,142", "-c", "imgmount d b:\\DIABLO.IMG -size 512,63,16,132"],
 		"mode": "asm",
@@ -1499,6 +1596,45 @@
 		"screenshots": ["https://www.mobygames.com/images/shots/l/444678-jetpack-dos-screenshot-main-menu-of-jetpack-painted-by-wayne.png", "https://www.mobygames.com/images/shots/l/444679-jetpack-dos-screenshot-start-playing-jetpack-in-level-1.png"],
 		"clones": []
 	} , {
+		"id": "jezzball",
+		"group": "Jezz Ball",
+		"name": "Jezz Ball",
+		"executable": "d:\\runapp JEZZBALL.EXE",
+		"files": [{
+			"file": "win31.zip",
+			"mount": "d"
+		} , {
+			"file": "jezzball.zip",
+			"mount": "c"
+		}],
+		"size": 49588,
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1992,
+		"genre": "Action Puzzle",
+		"developer": "Dima Pavlovsky",
+		"publisher": "Marjacq Micro Ltd.",
+		"copyright": "Microsoft Corp.",
+		"license": "Commercial",
+		"status": "Working",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/JezzBall"
+		},
+		"screenshots": ["https://cdn.mobygames.com/screenshots/15790913-jezzball-windows-16-bit-trimming-away-a-room-segment.png", "https://cdn.mobygames.com/screenshots/15790886-jezzball-windows-16-bit-about.png"],
+		"clones": []
+	} , {
 		"id": "lemmmings",
 		"group": "Lemmings",
 		"name": "Lemmings 1 (Retail)",
@@ -1893,43 +2029,6 @@
 			},
 			"screenshots": ["https://www.mobygames.com/images/shots/l/239614-charlie-ii-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/239616-charlie-ii-dos-screenshot-starting-level-1.png"]
 		}]
-	} , {
-		"id": "sw",
-		"group": "Mario Kart",
-		"name": "Super Worms (Shareware) (Clone)",
-		"executable": "./SW.EXE",
-		"args": ["-c", "cycles=max"],
-		"file": "sw.zip",
-		"size": 80480,
-		"hardware": {
-			"input": ["Keyboard"],
-			"video": {
-				"VGA": {
-					"resolutions": [
-						"320x200"
-					],
-					"colors": 256
-				}
-			},
-			"sound": ["PC Speaker", "Adlib", "MPU401"]
-		},
-		"language": "English",
-		"languages": ["English", "Dutch"],
-		"year": 2001,
-		"genre": "Racing",
-		"developer": "Mike Wiering",
-		"publisher": "Wiering Software",
-		"copyright": "Wiering Software",
-		"version": "1.63",
-		"license": "Shareware",
-		"status": "Ingame",
-		"links": {
-			"url": "https://wieringsoftware.com/games/super-worms/",
-			"wikipedia": "https://en.wikipedia.org/wiki/Super_Mario_Kart",
-			"youtube": "https://www.youtube.com/watch?time_continue=231&v=4EkJpwKVgvo"
-		},
-		"screenshots": ["https://www.mobygames.com/images/shots/l/643085-super-worms-dos-screenshot-menu.png", "https://www.mobygames.com/images/shots/l/643087-super-worms-dos-screenshot-start-game.png"],
-		"clones": []
 	} , {
 		"id": "monkey1vgatalkie",
 		"group": "Monkey Island",
@@ -2328,56 +2427,6 @@
 			"screenshots": ["https://www.mobygames.com/images/shots/l/5514-cd-man-version-2-0-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/5515-cd-man-version-2-0-dos-screenshot-first-world-the-enchanted.gif"]
 		}]
 	} , {
-		"id": "pop1",
-		"group": "Prince of Persia",
-		"name": "Prince of Persia 1 (VGA) (Retail)",
-		"executable": "./PRINCE.EXE",
-		"file": "pop114.zip",
-		"size": 1988713,
-		"drm": ["Manual Lookup"],
-		"hardware": {
-			"input": ["Keyboard"],
-			"video": {
-				"VGA": {
-					"name": "Video Graphics Array",
-					"resolutions": [
-						"320x200"
-					],
-					"colors": 256
-				}
-			},
-			"sound": ["PC Speaker", "Sound Source", "Tandy", "Sound Blaster", "Sound Blaster Pro", "Roland MT-32"]
-		},
-		"language": "English",
-		"year": 1990,
-		"genre": "Platformer",
-		"developer": "Jordan Mechner",
-		"publisher": "Brøderbund Software, Inc.",
-		"copyright": "Ubisoft",
-		"version": "1.4",
-		"license": "Commercial",
-		"status": "Playable",
-		"links": {
-			"wikipedia": "https://en.wikipedia.org/wiki/Prince_of_Persia_(1989_video_game)"
-		},
-		"screenshots": ["https://www.mobygames.com/images/shots/l/814-prince-of-persia-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/816-prince-of-persia-dos-screenshot-a-fight-in-the-dungeons.gif"],
-		"clones": [{
-			"id": "pop2",
-			"name": "Prince of Persia 2: The Shadow and the Flame (VGA) (Retail)",
-			"executable": "./PRINCE.EXE",
-			"sync": false,
-			"file": "pop211.zip",
-			"size": 5129227,
-			"year": 1993,
-			"version": "1.1",
-			"license": "Commercial",
-			"status": "Playable",
-			"links": {
-				"wikipedia": "https://en.wikipedia.org/wiki/Prince_of_Persia_2:_The_Shadow_and_the_Flame"
-			},
-			"screenshots": ["https://www.mobygames.com/images/shots/l/820-prince-of-persia-2-the-shadow-the-flame-dos-screenshot-title.gif", "https://www.mobygames.com/images/shots/l/827-prince-of-persia-2-the-shadow-the-flame-dos-screenshot-at-the.gif"]
-		}]
-	} , {
 		"id": "pcqbert",
 		"group": "Q*bert",
 		"name": "Q*bert",
@@ -2440,6 +2489,56 @@
 				"url": "http://www.jrok.com/pcbert.html"
 			},
 			"screenshots": ["https://www.mobygames.com/images/shots/l/503864-q-bert-dos-screenshot-ibm-title-screen.png", "https://www.mobygames.com/images/shots/l/503867-q-bert-dos-screenshot-start-of-level-1.png"]
+		}]
+	} , {
+		"id": "pop1",
+		"group": "Prince of Persia",
+		"name": "Prince of Persia 1 (VGA) (Retail)",
+		"executable": "./PRINCE.EXE",
+		"file": "pop114.zip",
+		"size": 1988713,
+		"drm": ["Manual Lookup"],
+		"hardware": {
+			"input": ["Keyboard"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Source", "Tandy", "Sound Blaster", "Sound Blaster Pro", "Roland MT-32"]
+		},
+		"language": "English",
+		"year": 1990,
+		"genre": "Platformer",
+		"developer": "Jordan Mechner",
+		"publisher": "Brøderbund Software, Inc.",
+		"copyright": "Ubisoft",
+		"version": "1.4",
+		"license": "Commercial",
+		"status": "Playable",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/Prince_of_Persia_(1989_video_game)"
+		},
+		"screenshots": ["https://www.mobygames.com/images/shots/l/814-prince-of-persia-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/816-prince-of-persia-dos-screenshot-a-fight-in-the-dungeons.gif"],
+		"clones": [{
+			"id": "pop2",
+			"name": "Prince of Persia 2: The Shadow and the Flame (VGA) (Retail)",
+			"executable": "./PRINCE.EXE",
+			"sync": false,
+			"file": "pop211.zip",
+			"size": 5129227,
+			"year": 1993,
+			"version": "1.1",
+			"license": "Commercial",
+			"status": "Playable",
+			"links": {
+				"wikipedia": "https://en.wikipedia.org/wiki/Prince_of_Persia_2:_The_Shadow_and_the_Flame"
+			},
+			"screenshots": ["https://www.mobygames.com/images/shots/l/820-prince-of-persia-2-the-shadow-the-flame-dos-screenshot-title.gif", "https://www.mobygames.com/images/shots/l/827-prince-of-persia-2-the-shadow-the-flame-dos-screenshot-at-the.gif"]
 		}]
 	} , {
 		"id": "qbasic",
@@ -3039,6 +3138,43 @@
 		"screenshots": ["https://www.mobygames.com/images/shots/l/11419-stunts-dos-screenshot-stunts-v1-1-title-screen.gif", "https://www.mobygames.com/images/shots/l/1469-stunts-dos-screenshot-racing-in-monaco.gif"],
 		"clones": []
 	} , {
+		"id": "sw",
+		"group": "Mario Kart",
+		"name": "Super Worms (Shareware) (Clone)",
+		"executable": "./SW.EXE",
+		"args": ["-c", "cycles=max"],
+		"file": "sw.zip",
+		"size": 80480,
+		"hardware": {
+			"input": ["Keyboard"],
+			"video": {
+				"VGA": {
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Adlib", "MPU401"]
+		},
+		"language": "English",
+		"languages": ["English", "Dutch"],
+		"year": 2001,
+		"genre": "Racing",
+		"developer": "Mike Wiering",
+		"publisher": "Wiering Software",
+		"copyright": "Wiering Software",
+		"version": "1.63",
+		"license": "Shareware",
+		"status": "Ingame",
+		"links": {
+			"url": "https://wieringsoftware.com/games/super-worms/",
+			"wikipedia": "https://en.wikipedia.org/wiki/Super_Mario_Kart",
+			"youtube": "https://www.youtube.com/watch?time_continue=231&v=4EkJpwKVgvo"
+		},
+		"screenshots": ["https://www.mobygames.com/images/shots/l/643085-super-worms-dos-screenshot-menu.png", "https://www.mobygames.com/images/shots/l/643087-super-worms-dos-screenshot-start-game.png"],
+		"clones": []
+	} , {
 		"id": "tapper",
 		"group": "Tapper",
 		"name": "Tapper (CGA) (PC Booter)",
@@ -3072,91 +3208,6 @@
 		},
 		"screenshots": ["https://www.mobygames.com/images/shots/l/267517-tapper-pc-booter-screenshot-title-screen-cga-with-rgb-monitor.png", "https://www.mobygames.com/images/shots/l/267519-tapper-pc-booter-screenshot-the-customers-have-arrived-cga.png"],
 		"clones": []
-	} , {
-		"id": "arena",
-		"group": "The Elder Scrolls",
-		"name": "The Elder Scrolls I: Arena (Retail)",
-		"altnames": ["Arena"],
-		"executable": "./A.EXE",
-		"args": ["-c", "cycles=max", "-c", "c:", "-c", "A.EXE -sa:220 -si:5 -sd:1 -ma:220 -mq:5 -md:1 -ssbdig.adv -msbfm.adv"],
-		"file": "arena.zip",
-		"size": 9468383,
-		"drm": ["Manual Lookup"],
-		"hardware": {
-			"input": ["Keyboard", "Mouse"],
-			"video": {
-				"VGA": {
-					"name": "Video Graphics Array",
-					"resolutions": [
-						"320x200"
-					],
-					"colors": 256
-				}
-			},
-			"sound": ["PC Speaker", "Sound Blaster"]
-		},
-		"language": "English",
-		"year": 1994,
-		"genre": "Role-Playing Game (RPG)",
-		"subgenre": "Action Role-Playing Game (ARPG)",
-		"developer": "Bethesda Softworks LLC",
-		"publisher": "Bethesda Softworks LLC",
-		"copyright": "Bethesda Softworks LLC",
-		"license": "Commercial",
-		"status": "Slow",
-		"links": {
-			"url": "https://elderscrolls.bethesda.net/en/arena",
-			"wikipedia": "https://en.wikipedia.org/wiki/The_Elder_Scrolls:_Arena",
-			"youtube": "https://www.youtube.com/watch?v=pPmihFz_nmg"
-		},
-		"screenshots": ["https://www.mobygames.com/images/shots/l/305889-the-elder-scrolls-arena-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/39284-the-elder-scrolls-arena-dos-screenshot-outside-of-a-temple.jpg"],
-		"clones": []
-	} , {
-		"id": "vikings",
-		"group": "The Lost Vikings",
-		"name": "The Lost Vikings (Retail)",
-		"executable": "./VIKINGS.EXE",
-		"sync": false,
-		"file": "vikings.zip",
-		"size": 1257182,
-		"drm": ["Manual Lookup"],
-		"hardware": {
-			"input": ["Keyboard", "Mouse"],
-			"video": {
-				"VGA": {
-					"name": "Video Graphics Array",
-					"resolutions": [
-						"320x200"
-					],
-					"colors": 256
-				}
-			},
-			"sound": ["PC Speaker", "Sound Blaster"]
-		},
-		"language": "English",
-		"year": 1993,
-		"genre": "Puzzle Platformer",
-		"developer": "Silicon & Synapse, Inc.",
-		"publisher": "Interplay Productions, Inc.",
-		"copyright": "Blizzard Entertainment, Inc.",
-		"license": "Commercial",
-		"status": "Playable",
-		"links": {
-			"url": "https://www.blizzard.com/en-us/games/legacy/",
-			"wikipedia": "https://en.wikipedia.org/wiki/The_Lost_Vikings"
-		},
-		"screenshots": ["https://www.mobygames.com/images/shots/l/6859-the-lost-vikings-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/6861-the-lost-vikings-dos-screenshot-eric-olaf-and-baleog-hunting.gif"],
-		"clones": [{
-			"id": "vikingsbc",
-			"name": "The Lost Vikings (Freeware)",
-			"executable": "./VIKINGS.EXE",
-			"file": "vikingsbc.zip",
-			"size": 1370857,
-			"year": 2014,
-			"developer": "Blizzard Entertainment, Inc.",
-			"publisher": "Blizzard Entertainment, Inc.",
-			"license": "Freeware"
-		}]
 	} , {
 		"id": "tyrian2k",
 		"group": "Tyrian",
@@ -3241,6 +3292,52 @@
 		},
 		"screenshots": ["https://www.mobygames.com/images/shots/l/323200-utopia-the-creation-of-a-nation-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/323202-utopia-the-creation-of-a-nation-dos-screenshot-starting-up.png"],
 		"clones": []
+	} , {
+		"id": "vikings",
+		"group": "The Lost Vikings",
+		"name": "The Lost Vikings (Retail)",
+		"executable": "./VIKINGS.EXE",
+		"sync": false,
+		"file": "vikings.zip",
+		"size": 1257182,
+		"drm": ["Manual Lookup"],
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1993,
+		"genre": "Puzzle Platformer",
+		"developer": "Silicon & Synapse, Inc.",
+		"publisher": "Interplay Productions, Inc.",
+		"copyright": "Blizzard Entertainment, Inc.",
+		"license": "Commercial",
+		"status": "Playable",
+		"links": {
+			"url": "https://www.blizzard.com/en-us/games/legacy/",
+			"wikipedia": "https://en.wikipedia.org/wiki/The_Lost_Vikings"
+		},
+		"screenshots": ["https://www.mobygames.com/images/shots/l/6859-the-lost-vikings-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/6861-the-lost-vikings-dos-screenshot-eric-olaf-and-baleog-hunting.gif"],
+		"clones": [{
+			"id": "vikingsbc",
+			"name": "The Lost Vikings (Freeware)",
+			"executable": "./VIKINGS.EXE",
+			"file": "vikingsbc.zip",
+			"size": 1370857,
+			"year": 2014,
+			"developer": "Blizzard Entertainment, Inc.",
+			"publisher": "Blizzard Entertainment, Inc.",
+			"license": "Freeware"
+		}]
 	} , {
 		"id": "warcraft",
 		"group": "Warcraft",
@@ -3337,45 +3434,6 @@
 			"screenshots": ["https://www.mobygames.com/images/shots/l/105965-warcraft-ii-beyond-the-dark-portal-dos-screenshot-title-screen.png", "https://www.mobygames.com/images/shots/l/105670-warcraft-ii-beyond-the-dark-portal-dos-screenshot-mushrooms.gif"]
 		}]
 	} , {
-		"id": "jezzball",
-		"group": "Jezz Ball",
-		"name": "Jezz Ball",
-		"executable": "d:\\runapp JEZZBALL.EXE",
-		"files": [{
-			"file": "win31.zip",
-			"mount": "d"
-		} , {
-			"file": "jezzball.zip",
-			"mount": "c"
-		}],
-		"size": 49588,
-		"hardware": {
-			"input": ["Keyboard", "Mouse"],
-			"video": {
-				"VGA": {
-					"name": "Video Graphics Array",
-					"resolutions": [
-						"320x200"
-					],
-					"colors": 256
-				}
-			},
-			"sound": ["PC Speaker", "Sound Blaster"]
-		},
-		"language": "English",
-		"year": 1992,
-		"genre": "Action Puzzle",
-		"developer": "Dima Pavlovsky",
-		"publisher": "Microsoft",
-		"copyright": "Microsoft",
-		"license": "Commercial",
-		"status": "Working",
-		"links": {
-			"wikipedia": "https://en.wikipedia.org/wiki/JezzBall"
-		},
-		"screenshots": ["https://cdn.mobygames.com/screenshots/15790913-jezzball-windows-16-bit-trimming-away-a-room-segment.png", "https://cdn.mobygames.com/screenshots/15790886-jezzball-windows-16-bit-about.png"],
-		"clones": []
-	} , {
 		"id": "win95",
 		"group": "Windows",
 		"name": "Windows 95 (Retail)",
@@ -3402,9 +3460,9 @@
 		"language": "English",
 		"year": 1995,
 		"genre": "Operating System (OS)",
-		"developer": "Microsoft",
-		"publisher": "Microsoft",
-		"copyright": "Microsoft",
+		"developer": "Microsoft Corp.",
+		"publisher": "Microsoft Corp.",
+		"copyright": "Microsoft Corp.",
 		"version": "4.00.950",
 		"license": "Commercial",
 		"status": "Working",
