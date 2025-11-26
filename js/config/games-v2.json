@@ -3213,12 +3213,27 @@
 					"https://www.mobygames.com/images/shots/l/10098-warcraft-orcs-humans-dos-screenshot-title-screen-main-menu.jpg", "https://www.mobygames.com/images/shots/l/20422-warcraft-orcs-humans-dos-screenshot-well-protected-side-especially.gif"
 				],
 				"versions": [{
-					"id": "warcraft",
+					"id": "war1",
 					"name": "Warcraft I: Orcs and Humans (Demo)",
 					"file": "war1.zip",
 					"size": 1416812,
 					"executable": ".\\WAR.EXE",
 					"license": "Shareware",
+					"status": "Playable",
+					"links": {
+						"gog": "https://www.gog.com/game/warcraft_bundle",
+						"wikipedia": "https://en.wikipedia.org/wiki/Warcraft:_Orcs_%26_Humans"
+					},
+					"screenshots": [
+						"https://www.mobygames.com/images/shots/l/10098-warcraft-orcs-humans-dos-screenshot-title-screen-main-menu.jpg", "https://www.mobygames.com/images/shots/l/20422-warcraft-orcs-humans-dos-screenshot-well-protected-side-especially.gif"
+					]
+				} , {
+					"id": "war1x",
+					"name": "Warcraft I: Orcs and Humans (CD Retail)",
+					"file": "war1x.zip",
+					"size": 47108861,
+					"executable": ".\\WAR.EXE",
+					"license": "Commercial",
 					"status": "Playable",
 					"links": {
 						"gog": "https://www.gog.com/game/warcraft_bundle",

@@ -391,7 +391,7 @@ canvas {
 /*noinspection CssOverwrittenProperties*/
 .v2 .select2-container--bootstrap4 .select2-results > .select2-results__options {
 	position: relative;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	max-height: 365px;
 }
 

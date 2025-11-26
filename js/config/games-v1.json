@@ -3339,7 +3339,7 @@
 			"license": "Freeware"
 		}]
 	} , {
-		"id": "warcraft",
+		"id": "war1",
 		"group": "Warcraft",
 		"name": "Warcraft I: Orcs and Humans (Demo)",
 		"executable": "./WAR.EXE",
@@ -3372,6 +3372,13 @@
 		},
 		"screenshots": ["https://www.mobygames.com/images/shots/l/10098-warcraft-orcs-humans-dos-screenshot-title-screen-main-menu.jpg", "https://www.mobygames.com/images/shots/l/20422-warcraft-orcs-humans-dos-screenshot-well-protected-side-especially.gif"],
 		"clones": [{
+			"id": "war1x",
+			"name": "Warcraft I: Orcs and Humans (CD Retail)",
+			"version": "1.22h",
+			"executable": "./WAR.EXE",
+			"file": "war1x.zip",
+			"size": 47108861
+		} , {
 			"id": "war2",
 			"name": "Warcraft II: Tides of Darkness",
 			"fullname": "Warcraft II: Tides of Darkness",
@@ -3389,6 +3396,7 @@
 			},
 			"screenshots": ["https://www.mobygames.com/images/shots/l/11374-warcraft-ii-tides-of-darkness-dos-screenshot-title-screen.gif", "https://www.mobygames.com/images/shots/l/64523-warcraft-ii-tides-of-darkness-dos-screenshot-peasants-are-the.gif"]
 		} , {
+			"id": "war2xrip",
 			"name": "Warcraft II: Beyond the Dark Portal (Rip) (Expansion)",
 			"executable": "./WAR2X/WAR2.EXE",
 			"file": "war2xrip.zip",
