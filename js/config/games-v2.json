@@ -3215,7 +3215,7 @@
 				"versions": [{
 					"id": "warcraft",
 					"name": "Warcraft I: Orcs and Humans (Demo)",
-					"file": "warcraft.zip",
+					"file": "war1.zip",
 					"size": 1416812,
 					"executable": ".\\WAR.EXE",
 					"license": "Shareware",
