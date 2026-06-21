@@ -3138,6 +3138,41 @@
 		"screenshots": ["https://www.mobygames.com/images/shots/l/11419-stunts-dos-screenshot-stunts-v1-1-title-screen.gif", "https://www.mobygames.com/images/shots/l/1469-stunts-dos-screenshot-racing-in-monaco.gif"],
 		"clones": []
 	} , {
+		"id": "syndicate",
+		"group": "Syndicate",
+		"name": "Syndicate (Retail)",
+		"executable": "./SYND.EXE",
+		"args": ["-c", "cycles=max"],
+		"file": "syndicat.zip",
+		"size": 32831118,
+		"hardware": {
+			"input": ["Keyboard", "Mouse"],
+			"video": {
+				"VGA": {
+					"name": "Video Graphics Array",
+					"resolutions": [
+						"320x200",
+						"640x480"
+					],
+					"colors": 256
+				}
+			},
+			"sound": ["PC Speaker", "Sound Blaster"]
+		},
+		"language": "English",
+		"year": 1993,
+		"genre": "Action",
+		"developer": "Bullfrog Productions, Ltd.",
+		"publisher": "Electronic Arts, Inc.",
+		"license": "Commercial",
+		"status": "Slow",
+		"links": {
+			"wikipedia": "https://en.wikipedia.org/wiki/Syndicate_(1993_video_game)",
+			"youtube": "https://www.youtube.com/watch?v=PQo0Mb2GOJ8"
+		},
+		"screenshots": ["https://cdn.mobygames.com/screenshots/9935079-syndicate-dos-title-screen.jpg", "https://cdn.mobygames.com/screenshots/12308050-syndicate-dos-main-menu.jpg", "https://cdn.mobygames.com/screenshots/1208191-syndicate-dos-killer-marketing-director.png"],
+		"clones": []
+	} , {
 		"id": "sw",
 		"group": "Mario Kart",
 		"name": "Super Worms (Shareware) (Clone)",

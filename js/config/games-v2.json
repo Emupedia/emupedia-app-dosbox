@@ -10,21 +10,15 @@
 				"id": "tapper",
 				"name": "Tapper",
 				"hardware": {
-					"input": [
-						"Keyboard"
-					],
+					"input": ["Keyboard"],
 					"video": {
 						"CGA": {
 							"name": "Color Graphics Adapter",
-							"resolutions": [
-								"320x200"
-							],
+							"resolutions": ["320x200"],
 							"colors": 4
 						}
 					},
-					"sound": [
-						"PC Speaker"
-					]
+					"sound": ["PC Speaker"]
 				},
 				"language": "English",
 				"year": 1983,
@@ -44,6 +38,38 @@
 					"cycles": 500,
 					"license": "Commercial",
 					"status": "Playable"
+				}]
+			} , {
+				"id": "syndicate",
+				"name": "Syndicate (Retail)",
+				"hardware": {
+					"input": ["Keyboard", "Mouse"],
+					"video": {
+						"VGA": {
+							"name": "Video Graphics Array",
+							"resolutions": ["320x200", "640x480"],
+							"colors": 256
+						}
+					},
+					"sound": ["PC Speaker", "Sound Blaster"]
+				},
+				"language": "English",
+				"year": 1993,
+				"developer": "Bullfrog Productions, Ltd.",
+				"publisher": "Electronic Arts, Inc.",
+				"links": {
+					"wikipedia": "https://en.wikipedia.org/wiki/Syndicate_(1993_video_game)",
+					"youtube": "https://www.youtube.com/watch?v=PQo0Mb2GOJ8"
+				},
+				"screenshots": ["https://cdn.mobygames.com/screenshots/9935079-syndicate-dos-title-screen.jpg", "https://cdn.mobygames.com/screenshots/12308050-syndicate-dos-main-menu.jpg", "https://cdn.mobygames.com/screenshots/1208191-syndicate-dos-killer-marketing-director.png"],
+				"versions": [{
+					"id": "syndicate",
+					"name": "Syndicate (Retail)",
+					"file": "syndicat.zip",
+					"size": 32831118,
+					"executable": ".\\SYND.EXE",
+					"license": "Commercial",
+					"status": "Slow"
 				}]
 			}]
 		} , {
