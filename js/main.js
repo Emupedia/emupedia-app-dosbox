@@ -1,24 +1,24 @@
 // noinspection ThisExpressionReferencesGlobalObjectJS,JSUnusedLocalSymbols
 (function(global) {
-	var $html							= null;
-	var $body							= null;
+	var $html						= null;
+	var $body						= null;
 	var $window						= null;
-	var $document						= null;
+	var $document					= null;
 	var $canvas						= null;
-	var $version_dropdown				= null;
-	var $list_dropdown_v1				= null;
-	var $list_dropdown_v2				= null;
-	var $options_dropdown				= null;
+	var $version_dropdown			= null;
+	var $list_dropdown_v1			= null;
+	var $list_dropdown_v2			= null;
+	var $options_dropdown			= null;
 	var $list_table					= null;
-	var $preview						= null;
-	var $start							= null;
+	var $preview					= null;
+	var $start						= null;
 
 	var dbx							= null;
-	var perfect_scrollbar				= null;
+	var perfect_scrollbar			= null;
 	var lightslider					= null;
 	var first						= true;
 	var started						= false;
-	var cacheManager					= null;
+	var cacheManager				= null;
 	var progressManager				= null;
 
 	// noinspection JSFileReferences,JSUnresolvedFunction,JSUnresolvedVariable
@@ -466,7 +466,7 @@
 
 							// Use Dropbox API with progress tracking
 							var xhr = new XMLHttpRequest();
-							xhr.open('POST', 'https://content.dropboxapi.com/2/files/download', true);
+							xhr.open('POST', ~location.host.indexOf('localhost') ? 'https://ws.emupedia.net/download/': 'https://ws.' + location.host + '/download/', true);
 							xhr.setRequestHeader('Authorization', 'Bearer ' + window['DROPBOX_TOKEN']);
 							xhr.setRequestHeader('Dropbox-API-Arg', JSON.stringify({ path: path }));
 							xhr.responseType = 'blob';
